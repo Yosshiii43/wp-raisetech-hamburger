@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/*=======================
+  グローバルメニュー
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.p-nav{
+    > ul{
+        color: fw.$color--darkGray;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;/*上下方向にはみ出した要素ををスクロールさせる*/
+        -ms-overflow-style: none;/*スクロールバー非表示（IE・Edge）*/
+        scrollbar-width: none;/*スクロールバー非表示（Firefox）*/
+        > li{
+            > a{
+                font-size: 2.4rem;
+                font-weight: 700;
+                padding-left: fw.sp-vw( 46 );
+                margin-bottom: fw.sp-vw( 40 );
+                @include fw.mq("tab"){
+                    padding-left: fw.tab-vw( 46 );
+                    margin-bottom: fw.tab-vw( 32 );
+                    @include fw.mq("pc"){
+                        padding-left: fw.pc-vw( 46 );
+                        margin-bottom: fw.pc-vw( 32 );                   
+                    }
+                }
+            }
+        > ul{
+            margin-bottom: fw.sp-vw( 60 );
+            @include fw.mq("tab"){
+                margin-bottom: fw.tab-vw( 48 );
+                @include fw.mq("pc"){
+                    margin-bottom: fw.pc-vw( 48 );
+                }
+            }
+            >li{ 
+                > a{
+                    font-size: 2.0rem;
+                    font-weight: 400;
+                    padding-left: fw.sp-vw( 66 );
+                    margin-bottom: fw.sp-vw( 20 );
+                    @include fw.mq("tab"){
+                        padding-left: fw.tab-vw( 66 );
+                        margin-bottom: fw.tab-vw( 20 );
+                        @include fw.mq("pc"){
+                            padding-left: fw.pc-vw( 66 );
+                            margin-bottom: fw.pc-vw( 20 );
+                        }
+                    }
+                }
+            }
+        }
+        }
+    }
+}
+.p-nav::-webkit-scrollbar{//スクロールバーの非表示
+    display:none;
+  }

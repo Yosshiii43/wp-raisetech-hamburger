@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/*=======================
+  タイトル
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+.c-title{
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    line-height: 1.5;
+}

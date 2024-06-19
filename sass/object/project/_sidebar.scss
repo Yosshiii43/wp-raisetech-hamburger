@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/*=======================
+  サイドバー
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+  @use "sass:math";
+
+.p-sidebar{
+  position: relative;
+  .p-navbg, .p-nav{
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+      }
+      .p-navbg{
+        transition: all 300ms 0ms ease-out;
+        width: 100vw;
+        background-color: rgba(0,0,0,0.502); 
+        z-index: 100;
+        opacity: 0;
+      }
+      .p-nav{
+        transition: all 300ms 1ms ease-out;
+        width: fw.sp-vw( 328 );
+        padding-top: fw.sp-vw( 178 );
+        background-color: fw.$color--lightBeige;
+        z-index: 200;
+        left: 100%;
+        @include fw.mq("tab"){
+          width: fw.tab-vw( 367 );
+          @include fw.mq("pc"){
+              width         : inherit;
+              height        : inherit;
+              padding       : inherit;
+              position      : static;
+              background    : inherit;
+              transition: inherit;
+          }
+        }
+      }
+      &.is-open > .p-navbg{
+        opacity: 100;
+        @include fw.mq("pc"){
+          display: none;//tabサイズからpcサイズに変更時にグレー背景消去
+        }
+        }
+      &.is-open > .p-nav{
+          left: 100% - math.div( 328,375 ) * 100;
+          @include fw.mq("tab"){
+            left: 100% - math.div( 367,834 ) * 100;
+          }
+        }
+      h2{
+          font-size: 0;
+          line-height: 1;
+          @include fw.mq("pc"){
+          font-size: 3.4rem;
+          color: fw.$color--darkGray;
+          margin-top: fw.pc-vw( 84 ) ;
+          margin-bottom: fw.pc-vw( 90 ) ;
+          margin-left: fw.pc-vw( 46 ) ;
+          
+      }
+  }
+}

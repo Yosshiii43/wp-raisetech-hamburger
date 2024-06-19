@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*=======================
+  pre(そのまま表示)
+  =======================*/
+@use "../../foundation/forwords" as fw;
+
+.c-preformattedText{
+    background-color: fw.$color--paleGray;
+    padding: 5.0rem 5.9rem 5.0rem 4.9rem;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    @include fw.mq("tab"){
+        padding: 5.0rem 6.9rem 5.0rem 5.0rem;
+        @include fw.mq("pc"){
+            padding: 5.0rem 6.0rem 5.0rem 5.0rem;            
+        }
+    }
+}

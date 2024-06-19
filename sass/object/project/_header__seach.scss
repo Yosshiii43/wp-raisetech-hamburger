@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/*=======================
+  heddar検索
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.p-header__search{
+    margin: 4.0rem auto 0;
+    @include fw.mq("tab"){
+      margin-top: 3.8rem;
+      @include fw.mq("pc"){
+        margin: 0;
+      }
+    }
+  form{
+  width: fw.sp-vw( 318 );
+  display: flex;  
+  justify-content: space-between;
+  @include fw.mq("tab"){
+      width: fw.tab-vw( 546 );
+      @include fw.mq("pc"){
+        width: fw.pc-vw( 546 );
+      }
+  }
+  input{
+      width: fw.sp-vw( 216 );
+      padding: 1.1rem 0.5rem 1.1rem 2.9rem;
+      @include fw.mq("tab"){
+          width: fw.tab-vw( 396 );
+          padding: 1.1rem 1.2rem 1.1rem 3.6rem;
+          @include fw.mq("pc"){
+            width: fw.pc-vw( 396 );
+          }
+      }
+  }
+  button{
+    display: block;
+
+    width: fw.sp-vw( 88 );
+    color: fw.$color--darkGray;
+      @include fw.mq("tab"){
+        width: fw.tab-vw( 134 );
+          @include fw.mq("pc"){
+            width: fw.pc-vw( 134 );
+          }
+      }
+  }
+  }
+}

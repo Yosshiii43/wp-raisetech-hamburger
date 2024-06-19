@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*=======================
+  行間隔広め
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+  .c-lineHeightWide{
+    line-height: 2.313;
+    @include fw.mq("pc"){
+        line-height: 2.06;
+    }
+  }

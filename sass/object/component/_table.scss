@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/*=======================
+  テーブル
+  =======================*/
+@use "../../foundation/forwords" as fw;
+
+.c-table{
+    border-collapse: collapse;
+    th,td{
+        border: solid 1px fw.$color--darkGray;
+        font-weight: 400;
+        text-align: left;
+    }
+}

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/*=======================
+  ヘッダー
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+/*旧
+.p-header{
+  padding-top: fw.sp-vw( 43 );
+  padding-bottom: fw.sp-vw( 39 );
+  display: flex;
+  flex-direction: column;
+  @include fw.mq("tab"){
+    padding-top: fw.tab-vw( 40 );
+    padding-bottom: fw.tab-vw( 40 );
+    @include fw.mq("pc"){
+        padding: fw.pc-vw( 66 ) fw.pc-vw( 31 ) fw.pc-vw( 67 ) fw.pc-vw( 65 );
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+  }
+}
+*/
+.p-header{
+  padding-top: 4.3rem;
+  padding-bottom: 3.0rem;
+  display: flex;
+  flex-direction: column;
+  @include fw.mq("tab"){
+    padding-top: 4.0rem;
+    padding-bottom: 4.0rem;
+    @include fw.mq("pc"){
+        padding: 6.6rem 3.1rem 6.7rem 6.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+  }
+}

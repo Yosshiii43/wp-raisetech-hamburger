@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*=======================
+  スクエア
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.c-square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 35px;
+    height: 35px;
+    border: 1px solid fw.$color--darkGray;
+}

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*=======================
+  ボタン調整
+  =======================*/
+@use "../../foundation/forwords" as fw;
+
+.u-button--middle{
+    padding-top: 2.9rem;
+    padding-bottom: 2.8rem;
+    width: 100%;
+    border-radius: 20px;
+    @include fw.mq("tab"){
+        padding-top: 4.2rem;
+        padding-bottom: 3.8rem;
+        width: 42.9rem;
+    }
+}

@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/*=======================
+  ページネーション
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+  .p-pagination{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: fw.sp-vw( 62 );
+    @include fw.mq("tab"){
+        justify-content: center;
+        margin-top: fw.tab-vw( 106.5);
+        @include fw.mq("pc"){
+            margin-top: fw.pc-vw( 150 );
+        }
+    }
+    &__head{
+        display: none;
+        @include fw.mq("tab"){
+            display: block;
+            margin-right: 1.9rem;
+        }
+    }
+    &__prevposts{
+        svg{
+            margin-right: 0.8rem;
+            @include fw.mq("tab"){
+                margin-right: 1.7rem;
+            }
+        }
+        span{
+            @include fw.mq("tab"){
+                display: none;
+                margin-left: 0.8rem;
+            }
+        }
+    }
+    &__nextposts{
+        svg{
+            margin-left: 0.8rem;
+            @include fw.mq("tab"){
+                margin-left: 1.5rem;
+            }
+        }
+        span{
+            @include fw.mq("tab"){
+                display: none;
+                max-width: 0.8rem;
+            }
+        }
+    }
+    &__item{
+        display: none;
+        font-weight: 700;
+        background: fw.$color--white;
+        @include fw.mq("tab"){
+            display: block;
+        }
+        .c-activ{
+            color: fw.$color--white;
+            background: fw.$color--strongBrown;
+        }
+
+    }
+    &__item ~ &__item{
+        @include fw.mq("tab"){
+            margin-left: 1.5rem;
+        }
+    }
+  }

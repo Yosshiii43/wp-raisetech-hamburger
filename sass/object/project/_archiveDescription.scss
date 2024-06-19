@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/*=============================
+  アーカイブページディスクリプション
+  =============================*/
+  @use "../../foundation/forwords" as fw;
+
+.p-archiveDescription{
+    margin-bottom: fw.sp-vw( 19 );
+    @include fw.mq("tab"){
+        margin-bottom: fw.tab-vw( 37 );
+        @include fw.mq("pc"){
+            margin-bottom: fw.pc-vw( 70 );
+        }
+    }
+    h2{
+        font-size: 2.8rem;
+        margin-bottom: 2.5rem;
+        @include fw.mq("tab"){
+            font-size: 3.6rem;
+            margin-bottom: 2rem;
+        }
+    }
+}

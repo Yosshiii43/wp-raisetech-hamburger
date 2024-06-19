@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/*=======================
+  フッター
+  =======================*/
+@use "../foundation/forwords" as fw;
+
+.l-footer{
+    background-color: fw.$color--darkBrown;
+}

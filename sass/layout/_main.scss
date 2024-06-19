@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*=======================
+  メインカラム
+  =======================*/
+  @use "../foundation/forwords" as fw;
+
+.l-main{
+    width: 100%;
+    @include fw.mq("pc"){
+        display: block;
+    }
+}

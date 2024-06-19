@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*=======================
+  文字間隔-2px
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.c-text-smal{
+    font-size: 1.4rem;
+    @include fw.mq("pc"){
+      font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*=======================
+  blockquote
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+  
+.c-blockquote{
+    background: fw.$color--paleGray;
+    padding: 3.0rem 1.6rem 2.7rem 2.0rem;
+    @include fw.mq("tab"){
+    padding: 5.0rem 5.6rem 5.7rem 5.0rem;
+        @include fw.mq("pc"){
+            padding: 5.0rem 6.0rem 4.7rem 5.0rem;            
+        }
+    }
+    &__txt{
+        margin-bottom: 3.1rem;
+        @include fw.mq("tab"){
+            margin-bottom: 6.1rem;
+        }
+    }
+    &__footer{
+        &__cite{
+            color: fw.$color--blueGray;
+            font-style: normal;
+            text-decoration: underline solid fw.$color--blueGray;
+        }
+    }  
+}

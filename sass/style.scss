@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+// foundation
+// リセットCSS
+@use "foundation/reset";
+//ベースとなるCSS
+@use "foundation/base";
+
+//layout
+@use "layout/header" as lh;
+@use "layout/main";
+@use "layout/sidebar" as ls;
+@use "layout/footer" as lf;
+
+//object__component
+@use "object/component/body";
+@use "object/component/grid";
+@use "object/component/title";
+@use "object/component/text";
+@use "object/component/hedding";
+@use "object/component/font-mplus";
+@use "object/component/font-roboto";
+@use "object/component/seachBox";
+@use "object/component/button" as cb;
+@use "object/component/gnav";
+@use "object/component/horizon";
+@use "object/component/lineHeightWide";
+@use "object/component/text-small";
+@use "object/component/square";
+@use "object/component/sideBySide";
+@use "object/component/blockquote";
+@use "object/component/img";
+@use "object/component/imgText";
+@use "object/component/gallery";
+@use "object/component/orderList";
+@use "object/component/unOrderList";
+@use "object/component/preformattedText";
+@use "object/component/table" as ct;
+@use "object/component/bold";
+
+
+
+//object__project
+@use "object/project/header__btn";
+@use "object/project/header__seach";
+@use "object/project/header__ttl";
+@use "object/project/header" as ph;
+@use "object/project/sidebar" as ps;
+@use "object/project/mainVisual";
+@use "object/project/pageTitle";
+@use "object/project/nav";
+@use "object/project/wrapper";
+@use "object/project/salesFormat__wrap";
+@use "object/project/salesFormat";
+@use "object/project/salesFormat__ttl";
+@use "object/project/salesItem";
+@use "object/project/access";
+@use "object/project/footer" as pf;
+@use "object/project/archiveDescription";
+@use "object/project/archiveCard";
+@use "object/project/pagination";
+
+
+
+//object__utility
+@use "object/utility/marginBottom";
+@use "object/utility/marginLeft";
+@use "object/utility/imgAspect";
+@use "object/utility/objectPosition";
+@use "object/utility/table" as ut;
+@use "object/utility/button" as ub;

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*=======================
+  テーブル調整
+  =======================*/
+@use "../../foundation/forwords" as fw;
+
+.u-table--2column{
+    width: 100%;
+    th,td{
+        padding-top: 2.9rem;
+        padding-bottom: 2.4rem;
+        padding-left: 2.3rem;
+        @include fw.mq("tab"){
+            padding-left: 3.0rem;
+        }
+    }
+    th{
+        width: 40%;
+        @include fw.mq("tab"){
+            width: 30%;
+        }
+    }
+    td{
+        width: 60%;
+        @include fw.mq("tab"){
+            width: 70%;
+        }
+    }
+}

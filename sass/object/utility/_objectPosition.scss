@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*=======================
+  画像トリミング位置指定
+  =======================*/
+@use "../../foundation/forwords" as fw;
+
+.u-objectPosition--50-80{
+    img{
+        object-position: 50% 80%;
+    }
+}
+
+.u-objectPosition--50-30{
+    img{
+        object-position: 50% 30%;
+    }
+}

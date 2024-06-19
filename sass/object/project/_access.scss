@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/*=======================
+  トップページ地図
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.p-access{
+    width: 100%;
+    height: auto;
+    &__caption{
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        color: fw.$color--white;
+        width: 100%;
+        height: auto;
+        background: url(../../../img/map.png);
+        background-size: 400%;
+        background-position: 30% center;
+        @include fw.mq("tab"){
+            background-size: 145%;
+            background-position: 27% 53%;
+        }        
+        > div{
+            padding: fw.sp-vw( 42 ) fw.sp-vw( 40 ) fw.sp-vw( 57);
+            background: rgba(0,0,0,0.4029);
+            @include fw.mq("tab"){
+                padding: fw.tab-vw( 42 ) fw.tab-vw( 29 ) fw.tab-vw( 40 ) fw.tab-vw( 42 );
+                @include fw.mq("pc"){
+                    padding: fw.pc-vw( 86 ) fw.pc-vw( 737 ) fw.pc-vw( 75 ) fw.pc-vw( 119 );                    
+                }
+            }    
+        }
+        > div::after{
+            content: "";
+            background: rgba(0,0,0,0.2855);
+            display: block;
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            @include fw.mq("tab"){
+                height: 100%;
+                @include fw.mq("pc"){
+                    width: 62%;
+                }
+            }
+        }
+        &__ttl{
+            font-size: 3.0rem;
+            @include fw.mq("pc"){
+                font-size: 3.6rem;
+            }
+        }
+        &__horizon{
+            width: 75px;
+            height: 15px;
+            border-width: 2px; 
+            @include fw.mq("tab"){
+                @include fw.mq("pc"){
+                    height: 51px;
+                }
+            }
+        }
+        &__txt{
+            margin-top: 14px;
+            @include fw.mq("pc"){
+                margin-top: 59px;
+            }
+        }
+    }
+}

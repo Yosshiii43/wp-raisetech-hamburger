@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*=======================
+  margin-left
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.u-marginLeft--0-50-50{
+    margin-left: 0;
+    @include fw.mq("tab"){
+        margin-left: 5.0rem;
+    }
+}
+.u-marginLeft--1em{
+    margin-left: 1em;
+}

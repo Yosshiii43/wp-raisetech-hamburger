@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/*=======================
+  横並び中央揃え
+  =======================*/
+@use "../../foundation/forwords" as fw;
+
+.c-sideBySide{
+    display: flex;
+    align-items: center;
+}

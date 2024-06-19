@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/*=======================
+  ページタイトル
+  =======================*/
+@use "../../foundation/forwords" as fw;
+@use "sass:math";
+.p-pageTitle--front{ //フロントページ
+    color: fw.$color--white;
+    font-size: 3.6rem;
+    position: absolute;
+    top: calc( 52.28% - math.div(3.6rem,2));
+    left: fw.sp-vw( 25 );
+    @include fw.mq("tab"){
+        font-size: 4.0rem;
+        top: calc( 50.88% - math.div(3.6rem,2));
+        left: fw.tab-vw( 86 );
+        @include fw.mq("pc"){
+            top: calc( 49.72% - math.div(4.0rem,2));
+            left: fw.pc-vw( 86 );
+        }
+    }
+}
+
+
+.p-pageTitle--archive{ //アーカイブ・アーカイブサーチ
+    color: fw.$color--white;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 37.19%;
+    left: fw.sp-vw( 37 );    
+    @include fw.mq("tab"){
+        flex-direction: row;
+        top: 37.54%;
+        left: fw.tab-vw( 86 ); 
+        @include fw.mq("pc"){
+            top: 34.72%;
+            left: fw.pc-vw( 86 );
+        }
+    }
+    h1{
+        font-size: 3.6rem;
+        line-height: 1.1667;
+        @include fw.mq("tab"){
+            font-size: 6.0rem;
+        }
+    }
+    p{
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 12px;
+        @include fw.mq( tab ){
+            margin-top: 29px;
+            margin-left: 19px;
+        }
+    }
+}
+
+.p-pageTitle--single,.p-pageTitle--page{ //投稿ページ,固定ページ
+    color: fw.$color--white;
+    font-size: 3.6rem;
+    position: absolute;
+    top: calc( 50% - math.div(3.6rem,2));
+    left: fw.sp-vw( 26 );
+    @include fw.mq("tab"){
+        font-size: 6.0rem;
+        top: calc( 50% - math.div(6.0rem,2));
+        left: fw.tab-vw( 86 );
+        @include fw.mq("pc"){
+            top: calc( 50% - math.div(6.0rem,2));
+            left: fw.pc-vw( 86 );
+        }
+    }
+}

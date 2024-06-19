@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/*=======================
+  アンオーダーリスト
+  =======================*/
+@use "../../foundation/forwords" as fw;
+
+.c-unOrderList{
+    &__child{
+        margin: 1.7rem auto 1.7rem 1.8rem;
+    }
+}

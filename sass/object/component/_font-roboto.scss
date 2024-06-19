@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/*=======================
+  フォントファミリー Roboto
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.c-font-roboto{
+    font-family: roboto,sans-serif;;
+}

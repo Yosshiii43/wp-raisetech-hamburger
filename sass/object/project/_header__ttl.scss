@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/*=======================
+  ヘッダータイトル
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.p-header__ttl{
+  font-size: 4.0rem;
+  line-height: 1.1725;
+  text-align: center;
+  color: fw.$color--darkGray;
+  @include fw.mq("pc"){
+      font-size: 6.4rem;
+  }
+}

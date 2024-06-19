@@ -1,0 +1,28 @@
+
+@charset "UTF-8";
+/*============================
+  フロントページ商品紹介タイトル
+  ============================*/
+  @use "../../foundation/forwords" as fw;
+.p-salesFormat__ttl{
+    padding-bottom: 29px;
+    @include fw.mq("tab"){
+        padding-bottom: 35px;
+        @include fw.mq("pc"){
+            padding-bottom: 63px;
+        }        
+    }    
+h2{
+        font-size: 4.1rem;
+        line-height: 1.1708;
+        color: fw.$color--white;
+        @include fw.mq("tab"){
+            font-size: 4.4rem;
+            line-height: 1.1819;
+            @include fw.mq("pc"){
+                font-size: 8.0rem;
+                line-height: 1.1875;
+            }
+        }
+    }
+}

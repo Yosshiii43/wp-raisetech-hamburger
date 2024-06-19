@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*=======================
+  ギャラリー配置
+  =======================*/
+@use "../../foundation/forwords" as fw;
+
+.c-gallery{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    @include fw.mq("tab"){
+        grid-template-columns:1fr 1fr;
+        @include fw.mq("pc"){
+            grid-template-columns:1fr 1fr 1fr;
+        }
+    }
+} 

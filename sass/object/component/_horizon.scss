@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/*=======================
+  区切り線
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.c-horizon{
+    width: 34px;
+    height: 21px;
+    border-bottom: 4px solid fw.$color--white;
+    @include fw.mq("tab"){
+        width: 36px;
+        height: 26px;
+        @include fw.mq("pc"){
+          width: 63px;
+          height: 43px;
+        }
+    }
+}

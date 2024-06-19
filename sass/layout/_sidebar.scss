@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/*=======================
+  サイドバー
+  =======================*/
+  @use "../foundation/forwords" as fw;
+
+  .l-sidebar{
+    @include fw.mq("pc"){
+      background-color: fw.$color--lightBeige;
+    }
+  }

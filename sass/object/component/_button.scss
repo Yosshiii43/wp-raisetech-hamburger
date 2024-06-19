@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*=======================
+  ボタン
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.c-button{
+    border: 1px solid fw.$color--darkGray;
+    border-radius: 10px;
+    background:  linear-gradient(to right, fw.$color--gradationBeige1, fw.$color--gradationBeige2);
+    font-weight: 700;
+    text-align: center;
+}
+
+.c-button--reverse{
+  border: 1px solid fw.$color--darkGray;
+  border-radius: 10px;
+  background:  linear-gradient(to left, fw.$color--gradationBeige1, fw.$color--gradationBeige2);
+  font-weight: 700;
+  text-align: center;
+}

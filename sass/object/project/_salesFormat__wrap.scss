@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/*=======================
+  フロントページ商品紹介
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.p-salesFormat__wrap{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  @include fw.mq("tab"){
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}

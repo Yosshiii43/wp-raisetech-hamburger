@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/*=======================
+  フッター
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.p-footer{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding: fw.sp-vw( 16 ) 0 ;
+  background-image: url(../../../img/bg_footer.png);
+  background-size: auto 100%;
+  color: fw.$color--white;
+  @include fw.mq("tab"){
+    padding: fw.tab-vw( 30 ) 0 fw.tab-vw( 24 );
+    @include fw.mq("pc"){
+      padding: fw.pc-vw( 41 ) 0 fw.pc-vw( 27 );
+    }
+  }
+    &__ul,&__copyright{
+      flex-basis: 100%;
+      line-height: 1.5;
+    }
+    &__ul{
+      display: flex;
+      justify-content: center;
+      font-size: 1.8rem;
+      @include fw.mq("tab"){
+        font-size: 2.0rem;
+      }
+    }
+    &__copyright{
+      text-align: center;
+      font-size: 1.4rem;
+    }
+}

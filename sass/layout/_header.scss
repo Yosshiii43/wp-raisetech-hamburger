@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*=======================
+  ヘッダー
+  =======================*/
+  @use "../foundation/forwords" as fw;
+
+.l-header{
+  background-color: fw.$color--middleBeige;
+    @include fw.mq("pc"){
+      display: block;
+    }
+}

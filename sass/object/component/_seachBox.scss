@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/*=======================
+  検索ボックス
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.c-searchBox{
+    position: relative;
+    input{
+      border: 1px solid fw.$color--darkGray;
+      border-radius: 10px;
+      background-color: fw.$color--white;
+    }
+    p{
+      position: absolute;
+      top: calc(50% - 12px);//アイコンのt高さ24pxのため
+      left:0.5rem;
+      @include fw.mq("tab"){
+        left: 1.2rem;
+      }
+    }
+  }

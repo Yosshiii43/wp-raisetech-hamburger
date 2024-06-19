@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/*=======================
+  アーカイブページカード
+  =======================*/
+@use "../../foundation/forwords" as fw;
+@use "sass:math";
+
+.p-archiveCard{
+    display: flex;
+    flex-direction: column;
+    background: fw.$color--strongBrown;
+    position: relative;
+    overflow: hidden;
+    @include fw.mq("tab"){
+        flex-direction: row;
+    }
+    &__img,&__txt{
+        width: 100%;
+        height: auto;
+
+        @include fw.mq("tab"){
+            flex-basis: 50%;
+        }
+    }
+    &__img{
+        img{
+            position: static;
+            width: 100%;
+            height: 100%; 
+            object-fit: cover;
+            @include fw.mq("tab"){
+            position: absolute; /* 追加 */
+            top: 0; /* 追加 */
+            left: 0; /* 追加 */
+            width: 50%; /* 修正 */
+            }
+        }
+    }
+    &__txt{
+        color: fw.$color--white;
+        padding: fw.sp-vw( 32 ) fw.sp-vw( 16 ) fw.sp-vw( 44 );
+        @include fw.mq("tab"){
+            padding: fw.tab-vw( 31 ) fw.tab-vw( 35 ) fw.tab-vw( 40 );
+            @include fw.mq("pc"){
+                padding: fw.pc-vw( 56 ) fw.pc-vw( 63 ) fw.pc-vw( 60 );
+            }               
+        }
+        h3{
+            font-size: 2.0rem;
+            margin-bottom: 2.1rem;
+            @include fw.mq("pc"){
+                font-size: 3.6rem;
+                margin-bottom: 4.4rem;
+            }
+        }
+        h4{
+            margin-bottom: 0.7rem;
+            @include fw.mq("pc"){
+                font-size: 2.4rem;
+                margin-bottom: 1.3rem;
+            }
+        }
+        p{
+            margin-bottom: 4.0rem;
+            @include fw.mq("tab"){
+                margin-bottom: 4.5rem;
+                @include fw.mq("pc"){
+                    margin-bottom: 6.0rem;
+                }
+            }
+        }
+        &__btn {
+            text-align: center;
+            a{
+                display: inline-block;
+                color: fw.$color--darkGray;
+                background: fw.$color--white;
+                padding: 1.1rem 4.2rem 1.4rem;
+                border-radius:calc(1.1rem + 10.6rem + 1.4rem);
+                @include fw.mq("pc"){
+                    padding: 2.3rem 10.6rem 2.0rem;
+                    border-radius:calc(2.3rem + 10.6rem + 2.0rem);                    
+               }
+            }   
+        }
+    }
+}
+.p-archiveCard~.p-archiveCard{
+    margin-top: fw.sp-vw( 21 );
+    @include fw.mq("tab"){
+        margin-top: fw.tab-vw( 20.5 );
+        @include fw.mq("pc"){
+            margin-top: fw.pc-vw( 30 );
+        }
+    }
+}

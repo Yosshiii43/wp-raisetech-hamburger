@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/*=======================
+  hタグ基本
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.c-hedding--h2{
+    font-size: 2.8rem;
+    font-weight: 700;
+    @include fw.mq("tab"){
+        font-size: 3.6rem;
+    }
+}
+.c-hedding--h3{
+    font-size: 2.4rem;
+    @include fw.mq("tab"){
+        font-size: 2.8rem;
+        font-weight: 700;
+    }
+}
+.c-hedding--h4{
+    font-size: 2.0rem;
+    font-weight: 700;
+}
+.c-hedding--h5{
+    font-size: 2.0rem;
+    font-weight: 700;
+}
+.c-hedding--h6{
+    font-size: 2.0rem;
+    font-weight: 700;
+}

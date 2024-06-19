@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/*==========================
+  グローバルメニューの開閉ボタン
+  ==========================*/
+  @use "../../foundation/forwords" as fw;
+
+.p-header__btn{
+  position: absolute;
+  font-size: 2.0rem;
+  color: fw.$color--darkGray;
+  top: 0.8rem;
+  right: 0.8rem;
+  z-index: 1000;
+  @include fw.mq("tab"){
+    font-size: 3.4rem;
+    top: 2.0rem;
+    right: 2.5rem;
+    @include fw.mq("pc"){
+      font-size: 0;
+      }
+  }
+  &.is-open{
+    &::before,
+    &::after{
+      content: "";
+      width: 45.25px;
+      height: 6px;
+      background: fw.$color--darkGray;
+      position: absolute;
+      display: block;
+      right: 0;
+      top:16px;
+      @include fw.mq("pc"){
+        display: none;//tabサイズからpcサイズに変更時に×印消去
+      }
+    }
+    &::before{
+      transform: rotate( 45deg );
+
+    }
+    &::after{
+      transform: rotate( 135deg );
+    }     
+    > span{
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*=======================
+  オーダーリスト
+  =======================*/
+@use "../../foundation/forwords" as fw;
+
+.c-orderList{
+    &__list{
+        list-style:decimal;
+        margin-left: 1em;
+    }
+    &__child{
+        margin: 1.7rem auto 1.7rem 1.8rem;
+        &__list{
+            list-style: decimal;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/*=======================
+  太字
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+  .c-bold{
+    font-weight: 700;
+  }

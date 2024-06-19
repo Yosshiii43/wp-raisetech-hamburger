@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/*=======================
+  画像とテキストの横並び
+  =======================*/
+  @use "../../foundation/forwords" as fw;
+
+.c-imgText--LR, .c-imgText--RL{
+    display: flex;
+    justify-content: space-between;
+    .c-imgText__img{
+        flex-basis: 42.98%;
+        @include fw.mq("tab"){
+            flex-basis: 42.86%;
+            @include fw.mq("pc"){
+                flex-basis: 42.94%;
+            }
+        }
+    }
+    .c-imgText__txt{
+        flex-basis: 54.62%;
+        @include fw.mq("tab"){
+            flex-basis: 54.20%;
+            @include fw.mq("pc"){
+                flex-basis: 54.18%;
+            }
+        }
+    }
+}
