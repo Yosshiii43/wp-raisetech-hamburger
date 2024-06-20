@@ -14,7 +14,7 @@
         color: fw.$color--white;
         width: 100%;
         height: auto;
-        background: url(../../../img/map.png);
+        background: url(../img/map.png);
         background-size: 400%;
         background-position: 30% center;
         @include fw.mq("tab"){

@@ -8,10 +8,10 @@
 .p-mainVisual--front{ //フロントページ
     width: 100%;
     height: 28.5rem;
-    background: url(../../../img/mainvisual--frontSp.jpg) center / cover no-repeat;
+    background: url(../img/mainvisual--frontSp.jpg) center / cover no-repeat;
     position: relative;
     @include fw.mq("tab"){
-        background: url(../../../img/mainvisual--frontPc.jpg) center / cover no-repeat;
+        background: url(../img/mainvisual--frontPc.jpg) center / cover no-repeat;
         @include fw.mq("pc"){
             height: 53.0rem;
         }
@@ -21,10 +21,10 @@
 .p-mainVisual--archive{ //アーカイブページ・アーカイブサーチページ
     width: 100%;
     height: 28.5rem;
-    background: url(../../../img/mainvisual--archiveSp.jpg) left 46%  / 225% no-repeat;
+    background: url(../img/mainvisual--archiveSp.jpg) left 46%  / 225% no-repeat;
     position: relative;
     @include fw.mq("tab"){
-        background: url(../../../img/mainvisual--archivePc.jpg) center 45%/ 170% no-repeat;
+        background: url(../img/mainvisual--archivePc.jpg) center 45%/ 170% no-repeat;
         @include fw.mq("pc"){
             height: 23.9rem;
             background-position: center 47%;
@@ -44,7 +44,7 @@
 .p-mainVisual--single{ //singleページ
     width: 100%;
     height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
-    background: url(../../../img/mainvisual--single.jpg) center / 200% no-repeat;
+    background: url(../img/mainvisual--single.jpg) center / 200% no-repeat;
     position: relative;
     @include fw.mq("tab"){
         height: 50.5rem;
