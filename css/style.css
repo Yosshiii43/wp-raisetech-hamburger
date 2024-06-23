@@ -731,33 +731,33 @@ body > .wrapper .l-sidebar {
     width: 28.4375vw;
   }
 }
-.p-header__search form input {
+.p-header__search form div input {
   width: 57.6vw;
   padding: 1.1rem 0.5rem 1.1rem 2.9rem;
 }
 @media screen and (min-width: 768px) {
-  .p-header__search form input {
+  .p-header__search form div input {
     width: 47.4820143885vw;
     padding: 1.1rem 1.2rem 1.1rem 3.6rem;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-header__search form input {
+  .p-header__search form div input {
     width: 20.625vw;
   }
 }
-.p-header__search form button {
+.p-header__search form > input {
   display: block;
   width: 23.4666666667vw;
   color: #707070;
 }
 @media screen and (min-width: 768px) {
-  .p-header__search form button {
+  .p-header__search form > input {
     width: 16.067146283vw;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-header__search form button {
+  .p-header__search form > input {
     width: 6.9791666667vw;
   }
 }

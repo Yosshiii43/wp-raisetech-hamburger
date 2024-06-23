@@ -11,14 +11,6 @@
     <div class="wrapper">
     <header class="l-header p-header">
         <button class="p-header__btn c-title js-navButton"><span>Menu</span></button>
-        <p class="p-header__ttl c-title"><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo( 'name' ); ?></a></p>
-        <div class="p-header__search">
-            <form action="" >
-                <div class="c-searchBox">
-                    <input type="search">
-                    <p class="c-seachIcon"><img src="<?php echo esc_url(get_theme_file_uri()); ?>/img/search__icon.png" alt="ルーペアイコン" width="24px" height="24px"></p>
-                </div>
-                <button class="c-button" type="button" >検索</button>
-            </form>
-        </div>
+        <p class="p-header__ttl c-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
+        <?php get_search_form(); ?>
     </header>

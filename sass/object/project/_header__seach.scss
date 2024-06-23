@@ -22,18 +22,20 @@
         width: fw.pc-vw( 546 );
       }
   }
-  input{
-      width: fw.sp-vw( 216 );
-      padding: 1.1rem 0.5rem 1.1rem 2.9rem;
-      @include fw.mq("tab"){
-          width: fw.tab-vw( 396 );
-          padding: 1.1rem 1.2rem 1.1rem 3.6rem;
-          @include fw.mq("pc"){
-            width: fw.pc-vw( 396 );
-          }
-      }
+  div{
+    input{
+        width: fw.sp-vw( 216 );
+        padding: 1.1rem 0.5rem 1.1rem 2.9rem;
+        @include fw.mq("tab"){
+            width: fw.tab-vw( 396 );
+            padding: 1.1rem 1.2rem 1.1rem 3.6rem;
+            @include fw.mq("pc"){
+              width: fw.pc-vw( 396 );
+            }
+        }
+    }
   }
-  button{
+  > input{
     display: block;
 
     width: fw.sp-vw( 88 );
