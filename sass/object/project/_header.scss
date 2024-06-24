@@ -22,18 +22,20 @@
 }
 */
 .p-header{
-  padding-top: 4.3rem;
-  padding-bottom: 3.0rem;
-  display: flex;
-  flex-direction: column;
-  @include fw.mq("tab"){
-    padding-top: 4.0rem;
-    padding-bottom: 4.0rem;
-    @include fw.mq("pc"){
-        padding: 6.6rem 3.1rem 6.7rem 6.5rem;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+  &__head{
+    padding-top: 4.3rem;
+    padding-bottom: 3.0rem;
+    display: flex;
+    flex-direction: column;
+    @include fw.mq("tab"){
+      padding-top: 4.0rem;
+      padding-bottom: 4.0rem;
+      @include fw.mq("pc"){
+          padding: 6.6rem 3.1rem 6.7rem 6.5rem;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+      }
     }
   }
 }

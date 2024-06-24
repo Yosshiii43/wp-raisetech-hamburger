@@ -10,7 +10,14 @@
     <?php wp_body_open(); ?>
     <div class="wrapper">
     <header class="l-header p-header">
-        <button class="p-header__btn c-title js-navButton"><span>Menu</span></button>
-        <p class="p-header__ttl c-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
-        <?php get_search_form(); ?>
+        <div class="p-header__head">
+            <button class="p-header__btn c-title js-navButton"><span>Menu</span></button>
+            <p class="p-header__ttl c-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
+            <?php get_search_form(); ?>
+        </div>
+        <div class="p-header__foot--front">
+            <div class="p-pageTitle--front">
+                <h1>ダミーサイト</h1>
+            </div>
+        </div>
     </header>

@@ -11,6 +11,7 @@ add_action('wp_enqueue_scripts', 'add_files');
 function theme_setup(){
     //テーマサポート
     add_theme_support('title-tag');
+    add_theme_support('html5',array('search-form'));
 }
 add_action('after_setup_theme', 'theme_setup');
 

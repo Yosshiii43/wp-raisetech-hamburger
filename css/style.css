@@ -252,7 +252,7 @@ body > .wrapper {
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
   body > .wrapper {
-    grid-template-rows: 21.7rem 1fr 7.8125vw;
+    grid-template-rows: auto 1fr 7.8125vw;
     grid-template-columns: 1fr 19.12%;
   }
 }
@@ -798,20 +798,20 @@ body > .wrapper .l-sidebar {
   }
 }
 */
-.p-header {
+.p-header__head {
   padding-top: 4.3rem;
   padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 768px) {
-  .p-header {
+  .p-header__head {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-header {
+  .p-header__head {
     padding: 6.6rem 3.1rem 6.7rem 6.5rem;
     flex-direction: row;
     justify-content: space-between;
@@ -893,42 +893,112 @@ body > .wrapper .l-sidebar {
 /*=======================
   メインビジュアル
   =======================*/
-.p-mainVisual--front {
+/*
+.p-mainVisual--front{ //フロントページ
+    width: 100%;
+    height: 28.5rem;
+    background: url(../img/mainvisual--frontSp.jpg) center / cover no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        background: url(../img/mainvisual--frontPc.jpg) center / cover no-repeat;
+        @include fw.mq("pc"){
+            height: 53.0rem;
+        }
+    }
+}
+
+.p-mainVisual--archive{ //アーカイブページ・アーカイブサーチページ
+    width: 100%;
+    height: 28.5rem;
+    background: url(../img/mainvisual--archiveSp.jpg) left 46%  / 225% no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        background: url(../img/mainvisual--archivePc.jpg) center 45%/ 170% no-repeat;
+        @include fw.mq("pc"){
+            height: 23.9rem;
+            background-position: center 47%;
+            background-size: cover;
+        }
+    }
+    &::before{//archiveは背景画像に黒の透過を乗せる
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+.p-mainVisual--single{ //singleページ
+    width: 100%;
+    height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
+    background: url(../img/mainvisual--single.jpg) center / 200% no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        height: 50.5rem;
+        background-position: center 62%;
+        @include fw.mq("pc"){
+            height: 50rem;
+            background-size: 100%;
+            background-position: center 65%;
+        }
+    }
+}
+
+.p-mainVisual--page{ //pageページ
+    width: 100%;
+    height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
+    background: url(../../../img/mainVisual--page.jpg) center 47% / 185% no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        height: 50.5rem;
+        background-size: 187%;
+        background-position: center 47%;
+        @include fw.mq("pc"){
+            height: 50rem;
+            background-size: 100%;
+            background-position: center 48%;
+        }
+    }
+}
+*/
+.p-header__foot--front {
   width: 100%;
   height: 28.5rem;
   background: url(../img/mainvisual--frontSp.jpg) center/cover no-repeat;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  .p-mainVisual--front {
+  .p-header__foot--front {
     background: url(../img/mainvisual--frontPc.jpg) center/cover no-repeat;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-mainVisual--front {
+  .p-header__foot--front {
     height: 53rem;
   }
 }
 
-.p-mainVisual--archive {
+.p-header__foot--archive {
   width: 100%;
   height: 28.5rem;
   background: url(../img/mainvisual--archiveSp.jpg) left 46%/225% no-repeat;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  .p-mainVisual--archive {
+  .p-header__foot--archive {
     background: url(../img/mainvisual--archivePc.jpg) center 45%/170% no-repeat;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-mainVisual--archive {
+  .p-header__foot--archive {
     height: 23.9rem;
     background-position: center 47%;
     background-size: cover;
   }
 }
-.p-mainVisual--archive::before {
+.p-header__foot--archive::before {
   content: "";
   position: absolute;
   top: 0;
@@ -938,41 +1008,41 @@ body > .wrapper .l-sidebar {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.p-mainVisual--single {
+.p-header__foot--single {
   width: 100%;
   height: 22.5rem;
   background: url(../img/mainvisual--single.jpg) center/200% no-repeat;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  .p-mainVisual--single {
+  .p-header__foot--single {
     height: 50.5rem;
     background-position: center 62%;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-mainVisual--single {
+  .p-header__foot--single {
     height: 50rem;
     background-size: 100%;
     background-position: center 65%;
   }
 }
 
-.p-mainVisual--page {
+.p-header__foot--page {
   width: 100%;
   height: 22.5rem;
   background: url(../../../img/mainVisual--page.jpg) center 47%/185% no-repeat;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  .p-mainVisual--page {
+  .p-header__foot--page {
     height: 50.5rem;
     background-size: 187%;
     background-position: center 47%;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-mainVisual--page {
+  .p-header__foot--page {
     height: 50rem;
     background-size: 100%;
     background-position: center 48%;
