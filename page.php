@@ -1,10 +1,5 @@
 <?php get_header(); ?>
     <main class="l-main">
-        <div class="p-mainVisual--page">
-            <div class="p-pageTitle--page">
-            <h1>ショップについて</h1>
-            </div>
-        </div>
         <div class="p-wrapper">
                 <h2 class="c-hedding--h2 u-marginBottom--28-56-56">見出しh2</h2>
                 <p class="c-text u-marginBottom--36-62-62">Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。</p>

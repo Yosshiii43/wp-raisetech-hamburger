@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/*=======================
+  メインビジュアル
+  =======================*/
+@use "../../foundation/forwords" as fw;
+@use "sass:math";
+
+.archive .p-header__foot{ //アーカイブページ・アーカイブサーチページ
+    width: 100%;
+    height: 28.5rem;
+    background: url(../img/mainvisual--archiveSp.jpg) left 46%  / 225% no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        background: url(../img/mainvisual--archivePc.jpg) center 45%/ 170% no-repeat;
+        @include fw.mq("pc"){
+            height: 23.9rem;
+            background-position: center 47%;
+            background-size: cover;
+        }
+    }
+    &::before{//archiveは背景画像に黒の透過を乗せる
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+.single .p-header__foot{ //singleページ
+    width: 100%;
+    height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
+    background: url(../img/mainvisual--single.jpg) center / 200% no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        height: 50.5rem;
+        background-position: center 62%;
+        @include fw.mq("pc"){
+            height: 50rem;
+            background-size: 100%;
+            background-position: center 65%;
+        }
+    }
+}
+
+.page .p-header__foot{ //pageページ
+    width: 100%;
+    height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
+    background: url(../../../img/mainVisual--page.jpg) center 47% / 185% no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        height: 50.5rem;
+        background-size: 187%;
+        background-position: center 47%;
+        @include fw.mq("pc"){
+            height: 50rem;
+            background-size: 100%;
+            background-position: center 48%;
+        }
+    }
+}
+
+.p-header__foot{ //フロントページ
+    width: 100%;
+    height: 28.5rem;
+    //background: url(../img/mainvisual--frontSp.jpg) center / cover no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        background: url(../img/mainvisual--frontPc.jpg) center / cover no-repeat;
+        @include fw.mq("pc"){
+            height: 53.0rem;
+        }
+    }
+}

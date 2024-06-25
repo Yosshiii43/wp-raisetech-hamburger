@@ -46,7 +46,8 @@
 @use "object/project/header__ttl";
 @use "object/project/header" as ph;
 @use "object/project/sidebar" as ps;
-@use "object/project/mainVisual";
+//@use "object/project/mainVisual";p-header__footに変更
+@use "object/project/header__foot";
 @use "object/project/pageTitle";
 @use "object/project/nav";
 @use "object/project/wrapper";
