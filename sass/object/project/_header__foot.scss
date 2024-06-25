@@ -53,35 +53,41 @@
 .page .p-header__foot{ //pageページ
     width: 100%;
     height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
-    //background: url(../../../img/mainVisual--page.jpg) center 47% / 185% no-repeat;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     @include fw.mq("tab"){
         height: 50.5rem;
-        //background-size: 187%;
-        //background-position: center 47%;
         @include fw.mq("pc"){
             height: 50rem;
-            //background-size: 100%;
-            //background-position: center 48%;
         }
     }
 }
-
+.page-id-8 .p-header__foot{ //ショップについてページ
+    width: 100%;
+    height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
+    background-position: center 47% ;
+    background-size: 185%;
+    background-repeat: no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        height: 50.5rem;
+        @include fw.mq("pc"){
+            height: 50rem;
+            background-size: 100%;
+            background-position: center 48%;
+        }
+    }
+}
 .home .p-header__foot{ //フロントページ
     width: 100%;
     height: 28.5rem;
-    //background: url(../img/mainvisual--frontSp.jpg) center / cover no-repeat;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    @include fw.mq("tab"){
-        background: url(../img/mainvisual--frontPc.jpg) center / cover no-repeat;
         @include fw.mq("pc"){
             height: 53.0rem;
         }
-    }
 }
