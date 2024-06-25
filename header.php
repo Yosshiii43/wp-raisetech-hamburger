@@ -6,7 +6,7 @@
     <meta name="description" contentt="<?php bloginfo('description'); ?>">
     <?php wp_head(); ?>
 </head>
-<body class="<?php body_class('c-body'); ?> ">
+<body <?php body_class('c-body'); ?>>
     <?php wp_body_open(); ?>
     <div class="wrapper">
     <header class="l-header p-header">
@@ -25,6 +25,7 @@
                 </div>
             </div>';
         }else{//アイキャッチ画像がなければデフォルトの画像を背景画像に指定する
+            $page_title = get_the_title();//投稿タイトルを取得して変数に代入
             echo '<div class="p-header__foot" style="background-image:url(' . get_theme_file_uri() . '/img/no-image.jpg);">
                 <div class="p-pageTitle--front">
                     <h1>' . $page_title . '</h1>

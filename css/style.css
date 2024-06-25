@@ -896,19 +896,14 @@ body > .wrapper .l-sidebar {
 .archive .p-header__foot {
   width: 100%;
   height: 28.5rem;
-  background: url(../img/mainvisual--archiveSp.jpg) left 46%/225% no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
-}
-@media screen and (min-width: 768px) {
-  .archive .p-header__foot {
-    background: url(../img/mainvisual--archivePc.jpg) center 45%/170% no-repeat;
-  }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
   .archive .p-header__foot {
     height: 23.9rem;
-    background-position: center 47%;
-    background-size: cover;
   }
 }
 .archive .p-header__foot::before {
@@ -924,7 +919,9 @@ body > .wrapper .l-sidebar {
 .single .p-header__foot {
   width: 100%;
   height: 22.5rem;
-  background: url(../img/mainvisual--single.jpg) center/200% no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
 }
 @media screen and (min-width: 768px) {
@@ -936,33 +933,29 @@ body > .wrapper .l-sidebar {
 @media screen and (min-width: 768px) and (min-width: 1024px) {
   .single .p-header__foot {
     height: 50rem;
-    background-size: 100%;
-    background-position: center 65%;
   }
 }
 
 .page .p-header__foot {
   width: 100%;
   height: 22.5rem;
-  background: url(../../../img/mainVisual--page.jpg) center 47%/185% no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
 }
 @media screen and (min-width: 768px) {
   .page .p-header__foot {
     height: 50.5rem;
-    background-size: 187%;
-    background-position: center 47%;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
   .page .p-header__foot {
     height: 50rem;
-    background-size: 100%;
-    background-position: center 48%;
   }
 }
 
-.p-header__foot {
+.home .p-header__foot {
   width: 100%;
   height: 28.5rem;
   background-position: center;
@@ -971,12 +964,12 @@ body > .wrapper .l-sidebar {
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  .p-header__foot {
+  .home .p-header__foot {
     background: url(../img/mainvisual--frontPc.jpg) center/cover no-repeat;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-header__foot {
+  .home .p-header__foot {
     height: 53rem;
   }
 }
