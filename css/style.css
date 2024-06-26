@@ -314,12 +314,12 @@ body > .wrapper .l-sidebar {
 /*=======================
   hタグ基本
   =======================*/
-.c-hedding--h2, h2.wp-block-heading {
+.c-hedding--h2 {
   font-size: 2.8rem;
   font-weight: 700;
 }
 @media screen and (min-width: 768px) {
-  .c-hedding--h2, h2.wp-block-heading {
+  .c-hedding--h2 {
     font-size: 3.6rem;
   }
 }
