@@ -1,0 +1,180 @@
+@charset "UTF-8";
+/*====================================
+  WordPressのブロックをスタイリング
+  ====================================*/
+@use "../foundation/forwords" as fw;
+@use "sass:math";
+
+/*見出し*/
+h2.wp-block-heading{
+    font-size: 2.8rem;
+    font-weight: 700;
+    @include fw.mq("tab"){
+        font-size: 3.6rem;
+    }
+}
+h3.wp-block-heading{
+    font-size: 2.4rem;
+    @include fw.mq("tab"){
+        font-size: 2.8rem;
+        font-weight: 700;
+    }
+}
+h4.wp-block-heading{
+    font-size: 2.0rem;
+    font-weight: 700;
+}
+h5.wp-block-heading{
+    font-size: 2.0rem;
+    font-weight: 700;
+}
+h6.wp-block-heading{
+    font-size: 2.0rem;
+    font-weight: 700;
+}
+
+/*引用*/
+.wp-block-quote{
+    background: fw.$color--paleGray;
+    padding: 3.0rem 2.0rem;
+    @include fw.mq("tab"){
+    padding: 5.0rem;
+    }
+    p{
+        margin-bottom: 3.1rem;
+        @include fw.mq("tab"){
+            margin-bottom: 6.0rem;
+        }
+    }
+    cite{
+        color: fw.$color--blueGray;
+        font-style: normal;
+        text-decoration: underline solid fw.$color--blueGray;
+    }
+    cite::before{
+        content:"出展元：";
+        color:fw.$color--textbrown;
+        display: inline-block;
+    }  
+}
+
+/*写真とテキスト横並び*/
+div.wp-block-media-text{//写真左
+    &__content{
+        padding: 0 0 0 1.0rem!important;
+        @include fw.mq("tab"){
+            padding: 0 0 0 2.1rem!important;
+            @include fw.mq("pc"){
+                padding: 0 0 0 4.0rem!important;
+            }
+        }        
+    }
+}
+div.wp-block-media-text.has-media-on-the-right{//写真右
+    .wp-block-media-text__content{
+        padding: 0 1.0rem 0 0!important;
+        @include fw.mq("tab"){
+            padding: 0 2.1rem 0 0!important;
+            @include fw.mq("pc"){
+                padding: 0 4.0rem 0 0!important;
+            }
+        }        
+    }
+}
+/*画像ミディアムサイズ*/
+.wp-block-image{
+    .size-medium{
+        width: fw.sp-vw( 267 );
+        @include fw.mq("tab"){
+            width: fw.tab-vw( 581 );
+            @include fw.mq("pc"){
+                width: fw.pc-vw( 581 );
+            }
+        }
+        img{
+            width: 100%;
+        }
+    }
+}
+
+/*ギャラリー*/
+figure.wp-block-gallery.has-nested-images.columns-default:not(#individual-image){
+    gap: 2.0rem;
+    figure.wp-block-image{
+        width: 100%;
+        flex-grow: 0;//横並びの数に満たない時に拡大しない
+        @include fw.mq("tab"){
+            width: calc(50% - math.div(2.0rem,2));//gapが2.0remの場合
+            @include fw.mq("pc"){
+                width: calc(33.33% - math.div((2.0rem*2),3));//gapが2.0remの場合
+            }
+        }
+    }
+}
+
+/*オーダーリスト*/
+ol{
+    li{
+        list-style:decimal;
+        margin-left: 1em;
+        ol{
+            margin: 1.7rem auto 1.7rem 1.8rem;
+        }
+    }
+}
+
+/*アンオーダーリスト*/
+    ul > li > ul{
+        margin: 1.7rem auto 1.7rem 1.8rem;
+    }
+
+/*コード*/
+.wp-block-code{
+    padding: 5.0rem;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+}
+
+/*テーブル*/
+.wp-block-table{
+    table{
+        th,td{
+            border: solid 1px fw.$color--darkGray;
+            padding-top: 2.9rem;
+            padding-bottom: 2.4rem;
+            padding-left: 2.3rem;
+            @include fw.mq("tab"){
+                padding-left: 3.0rem;
+            }
+        }
+        td:first-child{
+            width: 40%;
+            @include fw.mq("tab"){
+                width: 30%;
+            }
+        }
+        td:last-child{
+            width: 60%;
+            @include fw.mq("tab"){
+                width: 70%;
+            }
+        }
+    }
+}
+
+/*ボタン*/
+.wp-block-button{
+    width: 100%;
+    a{
+        border: 1px solid fw.$color--darkGray;
+        background:  linear-gradient(to right, fw.$color--gradationBeige1, fw.$color--gradationBeige2);
+        padding:3.0rem;
+        width: 100%;
+        border-radius: 20px;
+        @include fw.mq("tab"){
+            padding:4.0rem;
+            width: 43rem;
+        }
+    }
+}
+
