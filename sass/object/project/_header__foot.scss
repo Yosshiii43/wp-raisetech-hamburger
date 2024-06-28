@@ -50,6 +50,25 @@
     }
 }
 
+.single.postid-104 .p-header__foot{ //チーズバーガーページ
+    width: 100%;
+    height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
+    //background: url(../img/mainvisual--single.jpg) center / 200% no-repeat;
+    background-position: center;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        height: 50.5rem;
+        background-position: center 62%;
+        @include fw.mq("pc"){
+            height: 50rem;
+            background-size: 100%;
+            background-position: center 65%;
+        }
+    }
+}
+
 .page .p-header__foot{ //pageページ
     width: 100%;
     height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
@@ -64,7 +83,7 @@
         }
     }
 }
-.page-id-8 .p-header__foot{ //ショップについてページ
+.page.page-id-8 .p-header__foot{ //ショップについてページ
     width: 100%;
     height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
     background-position: center 47% ;
