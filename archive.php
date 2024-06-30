@@ -17,6 +17,17 @@
                     </div>
                     <div class="p-archiveCard__txt">
                         <h3 class="c-title"><?php the_title(); ?></h3>
+                        <?php
+                        //記事コンテンツを取得
+                        $content = get_the_content();
+                        //配列定義
+                        $h2_list = array();
+                        preg_match_all('/<h[2]>.+<\/h[2]>/u', $content, $h2_list);
+                        foreach ($h2_list[0] as $key => $h2_list_value) :
+                        ?>
+                          <!-- h2タグの中身を出力 -->
+                          <h4><?php echo strip_tags($h2_list_value); ?> </h4>
+                        <?php endforeach; ?>
                         <?php the_excerpt(); ?>
                         <div class="p-archiveCard__txt__btn"><a href="<?php the_permalink(); ?>">詳しく見る</a></div>
                     </div>
