@@ -2,13 +2,12 @@
     <main class="l-main">
         <div class="p-wrapper--archive">
             <section class="p-archiveDescription">
+            <!--カテゴリーまたはタグの説明を取得する-->
             <?php
                 if( is_category() && category_description() ) {
                     echo category_description();
                 }elseif(is_tag() && tag_description()){
                     echo tag_description();
-                }elseif(is_term() && term_description()){
-                    echo term_description();
                 }
             ?>
             </section>
