@@ -5,7 +5,12 @@
             <!--カテゴリーまたはタグの説明を取得する-->
             <?php
                 if( is_category() && category_description() ) {
-                    echo category_description();
+                echo category_description();
+                //$categorieDescription = category_description();
+                //$categorieHedding = mb_strstr( $categorieDescription, '<br>', true);
+                //$categorieText = mb_strstr( $categorieDescription, '<br>');
+                //echo '<h2>' . $categorieHedding . '</h2>';
+                //echo '<p>' . $categorieText. '</p>';
                 }elseif(is_tag() && tag_description()){
                     echo tag_description();
                 }
