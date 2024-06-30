@@ -5,6 +5,10 @@
             <?php
                 if( is_category() && category_description() ) {
                     echo category_description();
+                }elseif(is_tag() && tag_description()){
+                    echo tag_description();
+                }elseif(is_term() && term_description()){
+                    echo term_description();
                 }
             ?>
             </section>
