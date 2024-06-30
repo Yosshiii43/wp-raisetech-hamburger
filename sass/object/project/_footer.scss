@@ -9,7 +9,7 @@
   flex-wrap: wrap;
   align-content: space-between;
   padding: fw.sp-vw( 16 ) 0 ;
-  background-image: url(../../../img/bg_footer.png);
+  background-image: url(../img/bg_footer.png);
   background-size: auto 100%;
   color: fw.$color--white;
   @include fw.mq("tab"){

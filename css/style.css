@@ -1637,7 +1637,7 @@ body > .wrapper .l-sidebar {
   flex-wrap: wrap;
   align-content: space-between;
   padding: 4.2666666667vw 0;
-  background-image: url(../../../img/bg_footer.png);
+  background-image: url(../img/bg_footer.png);
   background-size: auto 100%;
   color: #FFFFFF;
 }

@@ -22,10 +22,10 @@
                         $content = get_the_content();
                         //配列定義
                         $h2_list = array();
-                        preg_match_all('/<h[2]>.+<\/h[2]>/u', $content, $h2_list);
+                        preg_match_all('/<h[2].+<\/h[2]>/u', $content, $h2_list);
                         foreach ($h2_list[0] as $key => $h2_list_value) :
                         ?>
-                          <!-- h2タグの中身を出力 -->
+                          <!-- h2タグの中身だけをh4タグで囲んで出力 -->
                           <h4><?php echo strip_tags($h2_list_value); ?> </h4>
                         <?php endforeach; ?>
                         <?php the_excerpt(); ?>
