@@ -5,40 +5,25 @@
                 <h2 class="p-archiveDescription__ttl c-title">小見出しが入ります</h2>
                 <p class="p-archiveDescription__text c-text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
             </section>
-            <article class="p-arhiveBody">
-                 <section class="p-archiveCard">
+            <article class="p-archiveBody">
+            <?php if(have_posts()): while(have_posts()): the_post();?>
+                 <section id="post-<?php the_ID(); ?>" <?php post_class( 'p-archiveCard' ); ?>>
                     <div class="p-archiveCard__img">
-                        <img src="./img/img_burger.jpg" alt="ハンバーガー写真" >
+                        <?php if( has_post_thumbnail() ): ?>
+                            <?php the_post_thumbnail(); ?>
+                        <?php else: ?>
+                            <img src="<?php echo esc_url( get_theme_file_uri() ); ?>/img/in-preparationer.jpg" alt="準備中" load="lazy" >
+                        <?php endif; ?>
                     </div>
                     <div class="p-archiveCard__txt">
-                        <h3 class="c-title">チーズバーガー</h3>
-                        <h4 class="c-title">小見出しが入ります</h4>
-                        <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
-                        <div class="p-archiveCard__txt__btn"><a href="">詳しく見る</a></div>
+                        <h3 class="c-title"><?php the_title(); ?></h3>
+                        <?php the_excerpt(); ?>
+                        <div class="p-archiveCard__txt__btn"><a href="<?php the_permalink(); ?>">詳しく見る</a></div>
                     </div>
                 </section>
-                 <section class="p-archiveCard">
-                    <div class="p-archiveCard__img">
-                        <img src="./img/img_burger.jpg" alt="ハンバーガー写真" >
-                    </div>
-                    <div class="p-archiveCard__txt">
-                        <h3 class="c-title">ダブルチーズバーガー</h3>
-                        <h4 class="c-title">小見出しが入ります</h4>
-                        <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
-                        <div class="p-archiveCard__txt__btn"><a href="">詳しく見る</a></div>
-                    </div>
-                </section>
-                 <section class="p-archiveCard">
-                    <div class="p-archiveCard__img">
-                        <img src="./img/img_burger.jpg" alt="ハンバーガー写真" >
-                    </div>
-                    <div class="p-archiveCard__txt">
-                        <h3 class="c-title">スペシャルチーズバーガー</h3>
-                        <h4 class="c-title">小見出しが入ります</h4>
-                        <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
-                        <div class="p-archiveCard__txt__btn"><a href="">詳しく見る</a></div>
-                    </div>
-                </section>
+                <?php endwhile; else : ?>
+                    <p>表示する記事がありません</p>
+                <?php endif; ?>
             </article>
             <ul class="p-pagination">
                 <li class="p-pagination__head c-title">page 1/10</li>
