@@ -48,6 +48,3 @@ function hanburger_archive_title($title) {
    return $title;
 }
    add_filter( 'get_the_archive_title','hanburger_archive_title');
-
-
-

@@ -2,8 +2,11 @@
     <main class="l-main">
         <div class="p-wrapper--archive">
             <section class="p-archiveDescription">
-                <h2 class="p-archiveDescription__ttl c-title">小見出しが入ります</h2>
-                <p class="p-archiveDescription__text c-text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+            <?php
+                if( is_category() && category_description() ) {
+                    echo category_description();
+                }
+            ?>
             </section>
             <article class="p-archiveBody">
             <?php if(have_posts()): while(have_posts()): the_post();?>
@@ -12,7 +15,7 @@
                         <?php if( has_post_thumbnail() ): ?>
                             <?php the_post_thumbnail(); ?>
                         <?php else: ?>
-                            <img src="<?php echo esc_url( get_theme_file_uri() ); ?>/img/in-preparationer.jpg" alt="準備中" load="lazy" >
+                            <img src="<?php echo esc_url( get_theme_file_uri() ); ?>/img/in-preparation.png" alt="準備中" load="lazy" >
                         <?php endif; ?>
                     </div>
                     <div class="p-archiveCard__txt">
