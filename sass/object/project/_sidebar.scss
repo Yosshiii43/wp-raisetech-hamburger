@@ -7,6 +7,10 @@
 
 .p-sidebar{
   position: relative;
+  visibility: hidden;
+  @include fw.mq("pc"){
+    visibility: visible;
+  }
   .p-navbg, .p-nav{
       height: 100vh;
       position: fixed;
@@ -37,6 +41,9 @@
               transition: inherit;
           }
         }
+      }
+      &.is-open{
+        visibility: visible;
       }
       &.is-open > .p-navbg{
         opacity: 100;

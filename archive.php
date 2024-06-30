@@ -1,39 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="./css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
-
-</head>
-<body class="p-archive c-body">
-    <div class="wrapper">
-    <header class="l-header p-header">
-        <button class="p-header__btn c-title js-navButton"><span>Menu</span></button>
-        <p class="p-header__ttl c-title"><a href="#">Hamburger</a></p>
-        <div class="p-header__search">
-            <form action="" >
-                <div class="c-searchBox">
-                    <input class="c-input" type="search">
-                    <p class="c-seachIcon"><img src="./img/search__icon.png" alt="ルーペアイコン" width="24px" height="24px"></p>
-                </div>
-                <button class="c-button" type="button" >検索</button>
-            </form>
-        </div>
-    </header>
+<?php get_header(); ?>
     <main class="l-main">
-        <div class="p-mainVisual--archive">
-            <div class="p-pageTitle--archive">
-            <h1>Menu:</h1>
-            <p class="p-subPageTitle">チーズバーガー</p>
-            </div>
-        </div>
         <div class="p-wrapper--archive">
             <section class="p-archiveDescription">
                 <h2 class="p-archiveDescription__ttl c-title">小見出しが入ります</h2>
@@ -124,51 +90,5 @@
             </ul>
         </div>
     </main>
-    <aside class="l-sidebar p-sidebar">
-        <div class="p-navbg"></div>
-        <nav class="p-nav">
-            <h2 class="c-title">Menu</h2>
-            <ul class="p-gnav c-gnav">
-                <li ><a href="#">バーガー</a>
-                    <ul class="c-gnav">
-                        <li><a href="#">ハンバーガー</a></li>
-                        <li><a href="#">チーズバーガー</a></li>
-                        <li><a href="#">テリヤキバーガー</a></li>
-                        <li><a href="#">アボガドバーガー</a></li>
-                        <li><a href="#">フィッシュバーガー</a></li>
-                        <li><a href="#">ベーコンバーガー</a></li>
-                        <li><a href="#">チキンバーガー</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">サイド</a>
-                    <ul class="c-navMenu">
-                        <li><a href="#">ポテト</a></li>
-                        <li><a href="#">サラダ</a></li>
-                        <li><a href="#">ナゲット</a></li>
-                        <li><a href="#">コーン</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">ドリンク</a>
-                    <ul class="c-navMenu">
-                        <li><a href="#">コーラ</a></li>
-                        <li><a href="#">ファンタ</a></li>
-                        <li><a href="#">オレンジ</a></li>
-                        <li><a href="#">アップル</a></li>
-                        <li><a href="#">紅茶（Ice/Hot）</a></li>
-                        <li><a href="#">コーヒー（Ice/Hot）</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </aside>
-    <footer class="l-footer p-footer">
-        <ul class="p-footer__ul">
-            <li><a href="#">ショップ情報</a></li>
-            <li>&nbsp;&verbar;&nbsp;</li>
-            <li><a href="#">ヒストリー</a></li>
-        </ul>
-        <p class="p-footer__copyright c-copyright">Copyright: RaiseTech</p>
-    </footer>
-    </div>
-</body>
-</html>
+    <?php get_sidebar(); ?>
+    <?php get_footer(); ?>

@@ -1,5 +1,4 @@
 <aside class="l-sidebar p-sidebar">
-        <div class="p-navbg"></div>
         <nav class="p-nav">
             <h2 class="c-title">Menu</h2>
             <ul class="p-gnav c-gnav">
@@ -34,4 +33,5 @@
                 </li>
             </ul>
         </nav>
+        <div class="p-navbg"></div>
     </aside>

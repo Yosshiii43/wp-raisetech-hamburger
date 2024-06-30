@@ -39,3 +39,12 @@ function hamburger_title($title){
     return $title;
 }
 add_filter('pre_get_document_title','hamburger_title');
+
+//アーカイブページの出力タイトルを変更する
+function hanburger_archive_title($title) {
+    if( is_category() or is_tag() ) {
+     $title = 'Menu:<span>' .single_cat_title( '', false ) . '</span>';
+    }
+   return $title;
+}
+   add_filter( 'get_the_archive_title','hanburger_archive_title');

@@ -45,13 +45,14 @@
             font-size: 6.0rem;
         }
     }
-    p{
+    span{
         font-size: 1.6rem;
         font-weight: 700;
-        margin-top: 12px;
-        @include fw.mq( tab ){
-            margin-top: 29px;
-            margin-left: 19px;
+        vertical-align: middle;
+        display: block;
+        @include fw.mq("tab"){
+            display: inline;
+            margin-left: 2.0rem;
         }
     }
 }

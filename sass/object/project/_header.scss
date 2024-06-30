@@ -3,24 +3,7 @@
   ヘッダー
   =======================*/
   @use "../../foundation/forwords" as fw;
-/*旧
-.p-header{
-  padding-top: fw.sp-vw( 43 );
-  padding-bottom: fw.sp-vw( 39 );
-  display: flex;
-  flex-direction: column;
-  @include fw.mq("tab"){
-    padding-top: fw.tab-vw( 40 );
-    padding-bottom: fw.tab-vw( 40 );
-    @include fw.mq("pc"){
-        padding: fw.pc-vw( 66 ) fw.pc-vw( 31 ) fw.pc-vw( 67 ) fw.pc-vw( 65 );
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-  }
-}
-*/
+
 .p-header{
   &__head{
     padding-top: 4.3rem;
