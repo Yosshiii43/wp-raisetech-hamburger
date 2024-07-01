@@ -236,7 +236,6 @@ ul > li > ul {
   }
 }
 .wp-pagenavi .page, .wp-pagenavi .current {
-  /*数字部分の共通CSS　大きさなど*/
   display: none;
 }
 @media screen and (min-width: 768px) {
@@ -279,6 +278,24 @@ ul > li > ul {
   .wp-pagenavi .nextpostslink::before {
     display: none;
   }
+}
+
+/*フッターナビ*/
+.menu-footer-menu-container {
+  margin: 0 auto;
+}
+.menu-footer-menu-container .menu {
+  display: flex;
+  font-size: 1.8rem;
+}
+@media screen and (min-width: 768px) {
+  .menu-footer-menu-container .menu {
+    font-size: 2rem;
+  }
+}
+.menu-footer-menu-container li:first-child::after {
+  content: "|";
+  margin: 0 0.5em;
 }
 
 /*=======================

@@ -205,7 +205,6 @@ ol{
         }
     }
 .page, .current{
-    /*数字部分の共通CSS　大きさなど*/
     display: none;
     @include fw.mq("tab"){
     display: inline-block;
@@ -245,3 +244,20 @@ ol{
     }
 }
 }
+
+
+/*フッターナビ*/
+.menu-footer-menu-container{
+    margin: 0 auto;;
+    .menu{
+        display: flex;
+        font-size: 1.8rem;
+        @include fw.mq("tab"){
+          font-size: 2.0rem;
+        }
+    }
+    li:first-child::after{
+        content: "|";
+        margin: 0 0.5em;
+    }
+  }
