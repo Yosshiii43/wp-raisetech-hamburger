@@ -12,9 +12,9 @@ function custom_theme_support(){
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
     register_nav_menus( array(
-         'footer_nav' => esc_html__( 'footer navigation', 'rtbread' ),
-         'category_nav' => esc_html__( 'category navigation', 'rtbread' ),
-         ) );
+        'main_nav' => 'メインメニュー',
+        'footer_nav' => 'フッターメニュー',
+         ));
      add_theme_support( 'editor-styles' );
      add_editor_style(); 
 }

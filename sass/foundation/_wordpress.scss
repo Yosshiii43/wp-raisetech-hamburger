@@ -178,3 +178,70 @@ ol{
     }
 }
 
+/*ページネーション(WP-PageNavi)*/
+.wp-pagenavi{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: fw.sp-vw( 62 );
+    @include fw.mq("tab"){
+        justify-content: center;
+        margin-top: fw.tab-vw( 106.5);
+        @include fw.mq("pc"){
+            margin-top: fw.pc-vw( 150 );
+        }
+    }
+    & > span,& > a{
+        margin: 7.5px;
+    }
+    .pages{
+        display: none;
+        @include fw.mq("tab"){
+            display: inline-block;
+            font-weight: 700;
+            color: fw.$color--darkGray;
+            font-family: robot;
+        }
+    }
+.page, .current{
+    /*数字部分の共通CSS　大きさなど*/
+    display: none;
+    @include fw.mq("tab"){
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: fw.$color--darkGray;
+    font-weight: 700;
+    font-family: robot;
+    text-decoration: none;
+    background: fw.$color--white;
+    border: 1px solid fw.$color--darkGray;
+    }
+
+    &.current, &:hover{
+    color: fw.$color--white;
+    background: fw.$color--strongBrown;
+    }
+}
+.previouspostslink,.nextpostslink{
+    color: fw.$color--darkGray;
+    font-size: 2.4rem;
+}
+.previouspostslink::after{
+    content: "前へ";
+    margin-left: 8px;
+    @include fw.mq("tab"){
+        display: none;
+    }
+}
+.nextpostslink::before{
+    content: "次へ";
+    margin-right: 8px;
+    @include fw.mq("tab"){
+        display: none;
+    }
+}
+}
