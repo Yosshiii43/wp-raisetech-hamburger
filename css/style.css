@@ -280,24 +280,6 @@ ul > li > ul {
   }
 }
 
-/*フッターナビ*/
-.menu-footer-menu-container {
-  margin: 0 auto;
-}
-.menu-footer-menu-container .menu {
-  display: flex;
-  font-size: 1.8rem;
-}
-@media screen and (min-width: 768px) {
-  .menu-footer-menu-container .menu {
-    font-size: 2rem;
-  }
-}
-.menu-footer-menu-container li:first-child::after {
-  content: "|";
-  margin: 0 0.5em;
-}
-
 /*=======================
   リセットCSS
   =======================*/
@@ -1135,6 +1117,7 @@ body > .wrapper .l-sidebar {
 @media screen and (min-width: 768px) {
   .p-sidebar .p-nav {
     width: 44.0047961631vw;
+    padding-top: 21.3429256595vw;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
@@ -1387,6 +1370,8 @@ body > .wrapper .l-sidebar {
   font-weight: 700;
   padding-left: 12.2666666667vw;
   margin-bottom: 10.6666666667vw;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (min-width: 768px) {
   .p-nav > ul > li > a {
@@ -1418,6 +1403,8 @@ body > .wrapper .l-sidebar {
   font-weight: 400;
   padding-left: 17.6vw;
   margin-bottom: 5.3333333333vw;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (min-width: 768px) {
   .p-nav > ul > li > ul > li > a {
@@ -1760,6 +1747,10 @@ body > .wrapper .l-sidebar {
   .p-footer__ul {
     font-size: 2rem;
   }
+}
+.p-footer__ul li:first-child::after {
+  content: "|";
+  margin: 0 0.5em;
 }
 .p-footer__copyright {
   text-align: center;

@@ -29,6 +29,10 @@
       @include fw.mq("tab"){
         font-size: 2.0rem;
       }
+      li:first-child::after{
+        content: "|";
+        margin: 0 0.5em;
+      }
     }
     &__copyright{
       text-align: center;

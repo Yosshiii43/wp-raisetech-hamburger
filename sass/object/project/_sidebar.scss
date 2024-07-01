@@ -32,6 +32,7 @@
         left: 100%;
         @include fw.mq("tab"){
           width: fw.tab-vw( 367 );
+          padding-top: fw.tab-vw( 178 );
           @include fw.mq("pc"){
               width         : inherit;
               height        : inherit;
