@@ -12,10 +12,10 @@
             margin-bottom: fw.pc-vw( 70 );
         }
     }
-    p::first-line{
+    h2{
         font-size: 2.8rem;
         font-weight: 700;
-        line-height: 2;
+        margin-bottom: 2rem;
         @include fw.mq("tab"){
             font-size: 3.6rem;
         }

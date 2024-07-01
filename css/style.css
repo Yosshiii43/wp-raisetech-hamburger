@@ -1686,13 +1686,13 @@ body > .wrapper .l-sidebar {
     margin-bottom: 3.6458333333vw;
   }
 }
-.p-archiveDescription p::first-line {
+.p-archiveDescription h2 {
   font-size: 2.8rem;
   font-weight: 700;
-  line-height: 2;
+  margin-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .p-archiveDescription p::first-line {
+  .p-archiveDescription h2 {
     font-size: 3.6rem;
   }
 }

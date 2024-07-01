@@ -48,3 +48,7 @@ function hanburger_archive_title($title) {
    return $title;
 }
    add_filter( 'get_the_archive_title','hanburger_archive_title');
+
+//カテゴリーの説明でHTMLタグを使えるように許可する
+remove_filter( 'pre_term_description', 'wp_filter_kses' );
+add_filter( 'pre_term_description', 'wp_filter_post_kses' );
