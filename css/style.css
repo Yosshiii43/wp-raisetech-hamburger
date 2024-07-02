@@ -1249,19 +1249,19 @@ body > .wrapper .l-sidebar {
   }
 }
 
-.home .p-header__foot {
+body.home .p-header__foot {
   width: 100%;
   height: 28.5rem;
   background: url(../img/mainvisual--frontSp.jpg) center/cover no-repeat;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  .home .p-header__foot {
+  body.home .p-header__foot {
     background: url(../img/mainvisual--frontPc.jpg) center/cover no-repeat;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .home .p-header__foot {
+  body.home .p-header__foot {
     height: 53rem;
   }
 }

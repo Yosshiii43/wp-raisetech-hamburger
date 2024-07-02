@@ -15,8 +15,8 @@
             <p class="p-header__ttl c-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
             <?php get_search_form(); ?>
         </div>
-        <?php if(is_home()){       
-                $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+        <?php wp_reset_query(); ?>
+        <?php if(is_front_page()){       
                 echo '<div class="p-header__foot">
                     <div class="p-pageTitle--front">
                         <h1>ダミーサイト</h1>
