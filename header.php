@@ -56,13 +56,20 @@
                     </div>
                 </div>';
             }               
-        }else{
+        }elseif(is_archive()){
                 $archive_title = get_the_archive_title();//アーカイブタイトルを取得して変数に代入
                 echo '<div class="p-header__foot" style="background-image:url(' . get_theme_file_uri() . '/img/no-image--archive.jpg);">
                     <div class="p-pageTitle--archive">
-                        <h1>' . $archive_title . '</h1>
+                        <h1 class="c-font-roboto">' . $archive_title . '</h1>
                     </div>
                 </div>';
-            }              
+        }elseif(is_search()){
+            $search_query = esc_html( get_search_query() );//検索キーワードを変数に代入
+            echo '<div class="p-header__foot" style="background-image:url(' . get_theme_file_uri() . '/img/no-image--archive.jpg);">
+                <div class="p-pageTitle--search">
+                    <h1 class="c-font-roboto">Search:<span>' . $search_query . '</span></h1>
+                </div>
+            </div>';
+        }              
         ?>
     </header>

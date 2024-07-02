@@ -55,3 +55,13 @@
 .u-marginBottom--60{
     margin-bottom: 6.0rem;
 }
+
+.u-marginBottom--25-55-57{
+    margin-bottom: 2.5rem;
+    @include fw.mq("tab"){
+        margin-bottom: 5.5rem;
+        @include fw.mq("pc"){
+            margin-bottom: 5.7rem;
+        }
+    }
+}

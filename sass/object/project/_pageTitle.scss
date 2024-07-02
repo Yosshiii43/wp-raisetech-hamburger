@@ -22,7 +22,7 @@
 }
 
 
-.p-pageTitle--archive{ //アーカイブ・アーカイブサーチ
+.p-pageTitle--archive, .p-pageTitle--search{ //アーカイブ・アーカイブサーチ
     color: fw.$color--white;
     display: flex;
     flex-direction: column;
