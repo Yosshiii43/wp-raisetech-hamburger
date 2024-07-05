@@ -15,61 +15,54 @@
             <p class="p-header__ttl c-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></p>
             <?php get_search_form(); ?>
         </div>
-        <?php wp_reset_query(); ?>
-        <?php if(is_front_page()){       
-                echo '<div class="p-header__foot">
-                    <div class="p-pageTitle--front">
-                        <h1>ダミーサイト</h1>
-                    </div>
-                </div>';
-        }elseif(is_page()){
-            if(has_post_thumbnail()) {//アイキャッチ画像があれば大きさはそのまま背景画像に指定する
-                $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
-                $page_title = get_the_title();//投稿タイトルを取得して変数に代入
-                echo '<div class="p-header__foot" style="background-image:url('. $image_url[0]. '">
-                    <div class="p-pageTitle--page">
-                        <h1>' . $page_title . '</h1>
-                    </div>
-                </div>';
-            }else{//アイキャッチ画像がなければデフォルトの画像を背景画像に指定する
-                $page_title = get_the_title();//投稿タイトルを取得して変数に代入
-                echo '<div class="p-header__foot" style="background-image:url(' . get_theme_file_uri() . '/img/no-image--page.jpg);">
-                    <div class="p-pageTitle--page">
-                        <h1>' . $page_title . '</h1>
-                    </div>
-                </div>';
-            }            
-        }elseif(is_single()){
-            if(has_post_thumbnail()) {//アイキャッチ画像があれば大きさはそのまま背景画像に指定する
-                $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
-                $page_title = get_the_title();//投稿タイトルを取得して変数に代入
-                echo '<div class="p-header__foot" style="background-image:url('. $image_url[0]. '">
-                    <div class="p-pageTitle--single">
-                        <h1>' . $page_title . '</h1>
-                    </div>
-                </div>';
-            }else{//アイキャッチ画像がなければデフォルトの画像を背景画像に指定する
-                $page_title = get_the_title();//投稿タイトルを取得して変数に代入
-                echo '<div class="p-header__foot" style="background-image:url(' . get_theme_file_uri() . '/img/no-image--shingle.jpg);">
-                    <div class="p-pageTitle--single">
-                        <h1>' . $page_title . '</h1>
-                    </div>
-                </div>';
-            }               
+        <?php
+        // ページのタイトルを取得
+        if(is_front_page()){
+            $page_title = 'ダミーサイト';
         }elseif(is_archive()){
-                $archive_title = get_the_archive_title();//アーカイブタイトルを取得して変数に代入
-                echo '<div class="p-header__foot" style="background-image:url(' . get_theme_file_uri() . '/img/no-image--archive.jpg);">
-                    <div class="p-pageTitle--archive">
-                        <h1 class="c-font-roboto">' . $archive_title . '</h1>
-                    </div>
-                </div>';
+            $page_title = get_the_archive_title();
         }elseif(is_search()){
-            $search_query = esc_html( get_search_query() );//検索キーワードを変数に代入
-            echo '<div class="p-header__foot" style="background-image:url(' . get_theme_file_uri() . '/img/no-image--archive.jpg);">
-                <div class="p-pageTitle--search">
-                    <h1 class="c-font-roboto">Search:<span>' . $search_query . '</span></h1>
-                </div>
-            </div>';
-        }              
+            $search_query =  get_search_query();
+            $page_title = 'Search:<span>' . $search_query . '</span>';
+        }else{
+            $page_title = get_the_title();
+        }
+        // デフォルトのアイキャッチ画像を取得
+        $default_thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        // カスタムフィールドからSP用アイキャッチのIDを取得
+        $sp_thumbnail_id = get_post_meta(get_the_ID(), 'sp-thumbnail', true);
+        // $sp_thumbnail_idからSP用アイキャッチのURLを取得
+        $sp_thumbnail = wp_get_attachment_image_url($sp_thumbnail_id, 'full');
+        if ($sp_thumbnail && $default_thumbnail) {
+            $background_image_pc = $default_thumbnail;
+            $background_image_sp = $sp_thumbnail;
+        } elseif (!$sp_thumbnail && $default_thumbnail) {
+            $background_image_pc = $default_thumbnail;
+            $background_image_sp = $default_thumbnail;
+        } else {
+            if(is_page()){
+                $background_image_pc = get_theme_file_uri() . '/img/mainVisual--page.jpg';
+                $background_image_sp = get_theme_file_uri() . '/img/mainVisual--page.jpg';
+            } elseif(is_single()){
+                $background_image_pc = get_theme_file_uri() . '/img/mainVisual--single.jpg';
+                $background_image_sp = get_theme_file_uri() . '/img/mainVisual--single.jpg';                
+            }else{
+                $background_image_pc = get_theme_file_uri() . '/img/mainVisual--archive.jpg';
+                $background_image_sp = get_theme_file_uri() . '/img/mainVisual--archiveSp.jpg'; 
+            }
+        }
         ?>
+        <?php if(wp_is_mobile()): ?>
+        <div class="p-header__foot" style="background-image:url(<?php echo $background_image_sp; ?>);">
+            <div class="p-pageTitle">
+                <h1><?php echo $page_title; ?></h1>
+            </div>
+        </div>
+        <?php else: ?>
+        <div class="p-header__foot" style="background-image:url(<?php echo $background_image_pc; ?>);">
+            <div class="p-pageTitle">
+                <h1 class="c-font-roboto"><?php echo $page_title; ?></h1>
+            </div>
+        </div>
+        <?php endif; ?>
     </header>

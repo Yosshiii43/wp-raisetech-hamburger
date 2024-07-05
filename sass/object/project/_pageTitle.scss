@@ -4,7 +4,7 @@
   =======================*/
 @use "../../foundation/forwords" as fw;
 @use "sass:math";
-.p-pageTitle--front{ //フロントページ
+.home .p-pageTitle{ //フロントページ
     color: fw.$color--white;
     font-size: 3.6rem;
     position: absolute;
@@ -22,7 +22,7 @@
 }
 
 
-.p-pageTitle--archive, .p-pageTitle--search{ //アーカイブ・アーカイブサーチ
+.archive .p-pageTitle, .search .p-pageTitle{ //アーカイブ・アーカイブサーチ
     color: fw.$color--white;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@
     }
 }
 
-.p-pageTitle--single,.p-pageTitle--page{ //投稿ページ,固定ページ
+.single .p-pageTitle,.page .p-pageTitle{ //投稿ページ,固定ページ
     color: fw.$color--white;
     font-size: 3.6rem;
     position: absolute;

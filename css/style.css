@@ -1166,19 +1166,44 @@ body > .wrapper .l-sidebar {
 /*=======================
   メインビジュアル
   =======================*/
-.archive .p-header__foot, .search .p-header__foot {
+.p-header__foot {
   width: 100%;
   height: 28.5rem;
-  background-position: center;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
 }
-@media screen and (min-width: 768px) and (min-width: 1024px) {
-  .archive .p-header__foot, .search .p-header__foot {
-    height: 23.9rem;
+@media screen and (min-width: 768px) {
+  .p-header__foot {
+    height: 50.5rem;
   }
 }
+@media screen and (min-width: 768px) and (min-width: 1024px) {
+  .p-header__foot {
+    height: 50rem;
+  }
+}
+
+/*
+.archive .p-header__foot, .search .p-header__foot{ //アーカイブページ,サーチページ
+    width: 100%;
+    height: 28.5rem;
+    //background: url(../img/mainvisual--archiveSp.jpg) left 46%  / 225% no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        //background: url(../img/mainvisual--archivePc.jpg) center 45%/ 170% no-repeat;
+        @include fw.mq("pc"){
+            height: 23.9rem;
+            //background-position: center 47%;
+            //background-size: cover;
+        }
+    }
+}
+*/
 .archive .p-header__foot::before, .search .p-header__foot::before {
   content: "";
   position: absolute;
@@ -1189,87 +1214,72 @@ body > .wrapper .l-sidebar {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.single .p-header__foot {
-  width: 100%;
-  height: 22.5rem;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
+/*
+.single .p-header__foot{ //singleページ
+    width: 100%;
+    height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
+    //background: url(../img/mainvisual--single.jpg) center / 200% no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        height: 50.5rem;
+        background-position: center 62%;
+        @include fw.mq("pc"){
+            height: 50rem;
+            //background-size: 100%;
+            //background-position: center 65%;
+        }
+    }
 }
-@media screen and (min-width: 768px) {
-  .single .p-header__foot {
-    height: 50.5rem;
-    background-position: center 62%;
-  }
+.page .p-header__foot{ //pageページ
+    width: 100%;
+    height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        height: 50.5rem;
+        @include fw.mq("pc"){
+            height: 50rem;
+        }
+    }
 }
-@media screen and (min-width: 768px) and (min-width: 1024px) {
-  .single .p-header__foot {
-    height: 50rem;
-  }
+.page.page-id-8 .p-header__foot{ //ショップについてページ
+    width: 100%;
+    height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
+    background-position: center 47% ;
+    background-size: 185%;
+    background-repeat: no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        height: 50.5rem;
+        @include fw.mq("pc"){
+            height: 50rem;
+            background-size: 100%;
+            background-position: center 48%;
+        }
+    }
 }
-
-.page .p-header__foot {
-  width: 100%;
-  height: 22.5rem;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
+.home .p-header__foot{ //フロントページ
+    width: 100%;
+    height: 28.5rem;
+    background: url(../img/mainvisual--frontSp.jpg) center / cover no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        background: url(../img/mainvisual--frontPc.jpg) center / cover no-repeat;
+        @include fw.mq("pc"){
+            height: 53.0rem;
+        }
+    }
 }
-@media screen and (min-width: 768px) {
-  .page .p-header__foot {
-    height: 50.5rem;
-  }
-}
-@media screen and (min-width: 768px) and (min-width: 1024px) {
-  .page .p-header__foot {
-    height: 50rem;
-  }
-}
-
-.page.page-id-8 .p-header__foot {
-  width: 100%;
-  height: 22.5rem;
-  background-position: center 47%;
-  background-size: 185%;
-  background-repeat: no-repeat;
-  position: relative;
-}
-@media screen and (min-width: 768px) {
-  .page.page-id-8 .p-header__foot {
-    height: 50.5rem;
-  }
-}
-@media screen and (min-width: 768px) and (min-width: 1024px) {
-  .page.page-id-8 .p-header__foot {
-    height: 50rem;
-    background-size: 100%;
-    background-position: center 48%;
-  }
-}
-
-body.home .p-header__foot {
-  width: 100%;
-  height: 28.5rem;
-  background: url(../img/mainvisual--frontSp.jpg) center/cover no-repeat;
-  position: relative;
-}
-@media screen and (min-width: 768px) {
-  body.home .p-header__foot {
-    background: url(../img/mainvisual--frontPc.jpg) center/cover no-repeat;
-  }
-}
-@media screen and (min-width: 768px) and (min-width: 1024px) {
-  body.home .p-header__foot {
-    height: 53rem;
-  }
-}
-
+    */
 /*=======================
   ページタイトル
   =======================*/
-.p-pageTitle--front {
+.home .p-pageTitle {
   color: #FFFFFF;
   font-size: 3.6rem;
   position: absolute;
@@ -1277,20 +1287,20 @@ body.home .p-header__foot {
   left: 6.6666666667vw;
 }
 @media screen and (min-width: 768px) {
-  .p-pageTitle--front {
+  .home .p-pageTitle {
     font-size: 4rem;
     top: calc(50.88% - 1.8rem);
     left: 10.3117505995vw;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-pageTitle--front {
+  .home .p-pageTitle {
     top: calc(49.72% - 2rem);
     left: 4.4791666667vw;
   }
 }
 
-.p-pageTitle--archive, .p-pageTitle--search {
+.archive .p-pageTitle, .search .p-pageTitle {
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
@@ -1299,41 +1309,41 @@ body.home .p-header__foot {
   left: 9.8666666667vw;
 }
 @media screen and (min-width: 768px) {
-  .p-pageTitle--archive, .p-pageTitle--search {
+  .archive .p-pageTitle, .search .p-pageTitle {
     flex-direction: row;
     top: 37.54%;
     left: 10.3117505995vw;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-pageTitle--archive, .p-pageTitle--search {
+  .archive .p-pageTitle, .search .p-pageTitle {
     top: 34.72%;
     left: 4.4791666667vw;
   }
 }
-.p-pageTitle--archive h1, .p-pageTitle--search h1 {
+.archive .p-pageTitle h1, .search .p-pageTitle h1 {
   font-size: 3.6rem;
   line-height: 1.1667;
 }
 @media screen and (min-width: 768px) {
-  .p-pageTitle--archive h1, .p-pageTitle--search h1 {
+  .archive .p-pageTitle h1, .search .p-pageTitle h1 {
     font-size: 6rem;
   }
 }
-.p-pageTitle--archive span, .p-pageTitle--search span {
+.archive .p-pageTitle span, .search .p-pageTitle span {
   font-size: 1.6rem;
   font-weight: 700;
   vertical-align: middle;
   display: block;
 }
 @media screen and (min-width: 768px) {
-  .p-pageTitle--archive span, .p-pageTitle--search span {
+  .archive .p-pageTitle span, .search .p-pageTitle span {
     display: inline;
     margin-left: 2rem;
   }
 }
 
-.p-pageTitle--single, .p-pageTitle--page {
+.single .p-pageTitle, .page .p-pageTitle {
   color: #FFFFFF;
   font-size: 3.6rem;
   position: absolute;
@@ -1341,14 +1351,14 @@ body.home .p-header__foot {
   left: 6.9333333333vw;
 }
 @media screen and (min-width: 768px) {
-  .p-pageTitle--single, .p-pageTitle--page {
+  .single .p-pageTitle, .page .p-pageTitle {
     font-size: 6rem;
     top: calc(50% - 3rem);
     left: 10.3117505995vw;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-pageTitle--single, .p-pageTitle--page {
+  .single .p-pageTitle, .page .p-pageTitle {
     top: calc(50% - 3rem);
     left: 4.4791666667vw;
   }

@@ -5,6 +5,21 @@
 @use "../../foundation/forwords" as fw;
 @use "sass:math";
 
+.p-header__foot{
+    width: 100%;
+    height: 28.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    @include fw.mq("tab"){
+        height: 50.5rem;
+        @include fw.mq("pc"){
+            height: 50rem;
+        }
+    }
+}
+/*
 .archive .p-header__foot, .search .p-header__foot{ //アーカイブページ,サーチページ
     width: 100%;
     height: 28.5rem;
@@ -21,7 +36,9 @@
             //background-size: cover;
         }
     }
-    &::before{//archiveは背景画像に黒の透過を乗せる
+}
+*/
+    .archive .p-header__foot::before, .search .p-header__foot::before{//archiveは背景画像に黒の透過を乗せる
         content: "";
         position: absolute;
         top: 0;
@@ -30,8 +47,7 @@
         left: 0;
         background-color: rgba(0, 0, 0, 0.5);
     }
-}
-
+/*
 .single .p-header__foot{ //singleページ
     width: 100%;
     height: 22.5rem;//縦横比では文字サイズや余白がおかしくなるのでremで指定
@@ -92,3 +108,4 @@
         }
     }
 }
+    */
