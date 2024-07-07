@@ -129,16 +129,45 @@
                 </article>
             </article>
         </div>
-        <div class="p-access">
+        <?php
+        if (function_exists('get_field')): // ACFが使えるかどうかチェック
+        ?>
+        <?php
+            // ACFが有効な場合
+            $access_group = get_field('access_group');//アクセスグループの中身を配列として変数に代入
+            $access_ttl = $access_group['access_ttl'];//$access_groupからアクセス見出しを取り出して変数に代入
+            $access_txt= $access_group['access_txt'];//$access_groupからアクセス本文を取り出して変数に代入
+        ?>
+        <?php if ($access_ttl || $access_txt): ?>
+            <div class="p-access">
                 <article class="p-access__caption">
                     <div>
-                    <h2 class="p-access__caption__ttl c-title">見出しが入ります</h2>
-                    <div class="p-access__caption__horizon c-horizon"></div>
-                    <p class="p-access__caption__txt c-lineHeightWide c-text-smal">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入りま</p>
+                        <?php if ($access_ttl): ?>
+                            <h2 class="p-access__caption__ttl c-title"><?php echo esc_html($access_ttl); ?></h2>
+                        <?php else: ?>
+                            <h2 class="p-access__caption__ttl c-title">front-page.phpに書いた見出しが入ります</h2>
+                        <?php endif; ?>
+                        <div class="p-access__caption__horizon c-horizon"></div>
+                        <?php if ($access_txt): ?>
+                            <p class="p-access__caption__txt c-lineHeightWide c-text-smal"><?php echo esc_html($access_txt); ?></p>
+                        <?php else: ?>
+                            <p class="p-access__caption__txt c-lineHeightWide c-text-smal">テキストが入ります。</p>
+                        <?php endif; ?>
                     </div>
                 </article>
                 <div class="p-access__base"></div>
-        </div>
+                <iframe class="p-access__map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.747798841982!2d139.74285797638572!3d35.658584831216686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bbd9009ec09%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1720370637413!5m2!1sja!2sjp"
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        <?php else: ?>
+            <p>取得できません</p>
+        <?php endif; ?>
+        <?php endif; ?>
     </main>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

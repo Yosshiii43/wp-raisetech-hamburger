@@ -1607,6 +1607,7 @@ body > .wrapper .l-sidebar {
 .p-access {
   width: 100%;
   height: auto;
+  position: relative;
 }
 .p-access__caption {
   position: relative;
@@ -1615,15 +1616,6 @@ body > .wrapper .l-sidebar {
   color: #FFFFFF;
   width: 100%;
   height: auto;
-  background: url(../img/map.png);
-  background-size: 400%;
-  background-position: 30% center;
-}
-@media screen and (min-width: 768px) {
-  .p-access__caption {
-    background-size: 145%;
-    background-position: 27% 53%;
-  }
 }
 .p-access__caption > div {
   padding: 11.2vw 10.6666666667vw 15.2vw;
@@ -1685,6 +1677,13 @@ body > .wrapper .l-sidebar {
   .p-access__caption__txt {
     margin-top: 59px;
   }
+}
+.p-access__map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*=======================
