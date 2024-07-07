@@ -129,30 +129,49 @@
                 </article>
             </article>
         </div>
-        <?php
-        if (function_exists('get_field')): // ACFが使えるかどうかチェック
-        ?>
-        <?php
-            // ACFが有効な場合
-            $access_group = get_field('access_group');//アクセスグループの中身を配列として変数に代入
-            $access_ttl = $access_group['access_ttl'];//$access_groupからアクセス見出しを取り出して変数に代入
-            $access_txt= $access_group['access_txt'];//$access_groupからアクセス本文を取り出して変数に代入
-        ?>
-        <?php if ($access_ttl || $access_txt): ?>
+
+
             <div class="p-access">
                 <article class="p-access__caption">
                     <div>
-                        <?php if ($access_ttl): ?>
+                    <?php
+                    if (function_exists('get_field')): // ACFが使えるかどうかチェック
+                    ?>
+                    <?php
+                        // ACFが有効な場合
+                        $access_group = get_field('access_group');//アクセスグループの中身を配列として変数に代入
+                        $access_ttl = $access_group['access_ttl'];//$access_groupからアクセス見出しを取り出して変数に代入
+                        $access_txt= $access_group['access_txt'];//$access_groupからアクセス本文を取り出して変数に代入
+                    ?>
+                    <?php if ($access_ttl || $access_txt): //アクセス見出しかアクセス本文があった場合
+                        ?>
+                        <?php if ($access_ttl): //アクセス見出しはじまり
+                            ?>
                             <h2 class="p-access__caption__ttl c-title"><?php echo esc_html($access_ttl); ?></h2>
                         <?php else: ?>
-                            <h2 class="p-access__caption__ttl c-title">front-page.phpに書いた見出しが入ります</h2>
-                        <?php endif; ?>
+                            <h2 class="p-access__caption__ttl c-title">front-page.phpに書いた見出しが入ります1</h2>
+                        <?php endif; //アクセス見出し終わり
+                        ?>
                         <div class="p-access__caption__horizon c-horizon"></div>
-                        <?php if ($access_txt): ?>
+                        <?php if ($access_txt): //アクセス本文はじまり
+                            ?>
                             <p class="p-access__caption__txt c-lineHeightWide c-text-smal"><?php echo esc_html($access_txt); ?></p>
                         <?php else: ?>
-                            <p class="p-access__caption__txt c-lineHeightWide c-text-smal">テキストが入ります。</p>
-                        <?php endif; ?>
+                            <p class="p-access__caption__txt c-lineHeightWide c-text-smal">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入りま</p>
+                        <?php endif; //アクセス本文終わり
+                        ?>
+                    <?php else: //アクセス見出しもアクセス本文も無かった場合
+                        ?>
+                        <h2 class="p-access__caption__ttl c-title">front-page.phpに書いた見出しが入ります2</h2>
+                        <p class="p-access__caption__txt c-lineHeightWide c-text-smal">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入りま</p>
+                    <?php endif; //アクセス見出しアクセス本文終わり
+                    ?>
+                    <?php else: //ACFが無効または存在しない場合
+                        ?>
+                        <h2 class="p-access__caption__ttl c-title">front-page.phpに書いた見出しが入ります3</h2>
+                        <p class="p-access__caption__txt c-lineHeightWide c-text-smal">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入りま</p>
+                    <?php endif; //ACFの条件分岐終わり
+                    ?>
                     </div>
                 </article>
                 <div class="p-access__base"></div>
@@ -164,10 +183,6 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-        <?php else: ?>
-            <p>取得できません</p>
-        <?php endif; ?>
-        <?php endif; ?>
     </main>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
