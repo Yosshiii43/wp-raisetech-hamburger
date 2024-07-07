@@ -61,7 +61,7 @@
 @use "object/project/footer" as pf;
 @use "object/project/archiveDescription";
 @use "object/project/archiveCard";
-@use "object/project/pagination";
+@use "object/project/pagination" as pp; 
 
 
 
@@ -72,3 +72,4 @@
 @use "object/utility/objectPosition";
 @use "object/utility/table" as ut;
 @use "object/utility/button" as ub;
+@use "object/utility/pagenation" as up;

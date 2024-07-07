@@ -12,7 +12,8 @@
             <?php endwhile; else : ?>
                 <p>表示する記事がありません</p>
             <?php endif; ?>
-            <?php wp_pagenavi(); ?>
+            <?php get_template_part('template-parts/pagenation','pagenation'); ?>
+            </article>
         </article>
     </div>
 </main>

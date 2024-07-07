@@ -2150,4 +2150,13 @@ body > .wrapper .l-sidebar {
     width: 42.9rem;
   }
 }
+
+/*===============================
+  ページネーション　プラグイン無効の場合
+  ===============================*/
+@media screen and (min-width: 768px) {
+  .u-pagenation--off .p-pagenation__nextposts {
+    margin-left: 2rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/*===============================
+  ページネーション　プラグイン無効の場合
+  ===============================*/
+@use "../../foundation/forwords" as fw;
+
+.u-pagenation--off{
+    .p-pagenation__nextposts{
+    @include fw.mq("tab"){
+        margin-left:2rem;
+    }
+    }
+}
