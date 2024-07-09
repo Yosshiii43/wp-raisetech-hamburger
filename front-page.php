@@ -3,7 +3,7 @@
         <div class="p-wrapper p-wrapper--front">
             <article class="p-salesFormat__wrap">
                 <article class="p-salesFormat">
-                    <a href="#">
+                    <a href="<?php echo esc_url(home_url('/')); ?>category/takeout/">
                         <div class="p-salesFormat__ttl">
                             <h2 class="c-title">Take Out</h2>
                             <div class="c-horizon"></div>
@@ -77,7 +77,7 @@
                 </a>
                 </article>
                 <article class="p-salesFormat">
-                    <a href="#">
+                    <a href="<?php echo esc_url(home_url('/')); ?>category/eatin/">
                         <div class="p-salesFormat__ttl">
                             <h2 class="c-title ">Eat In</h2>
                             <div class="c-horizon"></div>
@@ -153,42 +153,34 @@
         <div class="p-access">
             <article class="p-access__caption">
                 <div>
-                <?php
-                if (function_exists('get_field')): // ACFが使えるかどうかチェック
+                <?php if (function_exists('get_field')): // ACFが有効な場合
                 ?>
-                <?php
-                    // ACFが有効な場合
-                    $access_group = get_field('access_group');//アクセスグループの中身を配列として変数に代入
-                    $access_ttl = $access_group['access_ttl'];//$access_groupからアクセス見出しを取り出して変数に代入
-                    $access_txt= $access_group['access_txt'];//$access_groupからアクセス本文を取り出して変数に代入
-                ?>
-                <?php if ($access_ttl || $access_txt): //アクセス見出しかアクセス本文があった場合
+                    <?php
+                        $access_group = get_field('access_group');//アクセスグループの中身を配列として変数に代入
                     ?>
-                    <?php if ($access_ttl): //アクセス見出しはじまり
+                    <?php if($access_group): //アクセスグループに値があった場合
+                    ?>
+                    <?php
+                        $access_ttl = $access_group['access_ttl'];//$access_groupからアクセス見出しを取り出して変数に代入
+                        $access_txt= $access_group['access_txt'];//$access_groupからアクセス本文を取り出して変数に代入
+                    ?>
+                        <h2 class="p-access__caption__ttl c-title">
+                            <?php echo !empty($access_ttl) ? esc_html($access_ttl) : '見出しが未入力です'; //アクセス見出しに値があればそれを表示し、なければ「見出しが未入力です」と表示
+                            ?>
+                        </h2>
+                        <div class="p-access__caption__horizon c-horizon"></div>
+                        <p class="p-access__caption__txt c-lineHeightWide c-text-smal">
+                            <?php echo !empty($access_txt) ? esc_html($access_txt) : 'テキストが未入力です'; //アクセス本文に値があればそれを表示し、なければ「テキストが未入力です」と表示
+                            ?>
+                        </p>
+                    <?php else: //アクセスグループに値が無かった場合
                         ?>
-                        <h2 class="p-access__caption__ttl c-title"><?php echo esc_html($access_ttl); ?></h2>
-                    <?php else: ?>
-                        <h2 class="p-access__caption__ttl c-title">front-page.phpに書いた見出しが入ります1</h2>
-                    <?php endif; //アクセス見出し終わり
+                    <?php get_template_part('template-parts/access','access') ?>
+                    <?php endif; //アクセスグループ終わり
                     ?>
-                    <div class="p-access__caption__horizon c-horizon"></div>
-                    <?php if ($access_txt): //アクセス本文はじまり
-                        ?>
-                        <p class="p-access__caption__txt c-lineHeightWide c-text-smal"><?php echo esc_html($access_txt); ?></p>
-                    <?php else: ?>
-                        <p class="p-access__caption__txt c-lineHeightWide c-text-smal">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入りま</p>
-                    <?php endif; //アクセス本文終わり
-                    ?>
-                <?php else: //アクセス見出しもアクセス本文も無かった場合
-                    ?>
-                    <h2 class="p-access__caption__ttl c-title">front-page.phpに書いた見出しが入ります2</h2>
-                    <p class="p-access__caption__txt c-lineHeightWide c-text-smal">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入りま</p>
-                <?php endif; //アクセス見出しアクセス本文終わり
-                ?>
                 <?php else: //ACFが無効または存在しない場合
                     ?>
-                    <h2 class="p-access__caption__ttl c-title">front-page.phpに書いた見出しが入ります3</h2>
-                    <p class="p-access__caption__txt c-lineHeightWide c-text-smal">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入りま</p>
+                    <?php get_template_part('template-parts/access','access') ?>
                 <?php endif; //ACFの条件分岐終わり
                 ?>
                 </div>
