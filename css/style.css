@@ -1430,17 +1430,17 @@ body > .wrapper .l-sidebar {
   }
 }
 
-.p-wrapper--archive, .p-wrapper--search {
+.p-wrapper--archive, .p-wrapper--search, .p-wrapper--404 {
   background: #FFFDFA;
   padding: 8.5333333333vw 5.0666666667vw 8.5333333333vw 5.3333333333vw;
 }
 @media screen and (min-width: 768px) {
-  .p-wrapper--archive, .p-wrapper--search {
+  .p-wrapper--archive, .p-wrapper--search, .p-wrapper--404 {
     padding: 4.6762589928vw 4.1966426859vw 3.8369304556vw 5.1558752998vw;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
-  .p-wrapper--archive, .p-wrapper--search {
+  .p-wrapper--archive, .p-wrapper--search, .p-wrapper--404 {
     paddeing: 3.28125vw 5.2083333333vw 3.3333333333vw 5.2083333333vw;
   }
 }
@@ -2047,6 +2047,10 @@ body > .wrapper .l-sidebar {
   }
 }
 
+.u-marginBottom--10 {
+  margin-bottom: 1rem;
+}
+
 /*=======================
   margin-left
   =======================*/
@@ -2157,5 +2161,12 @@ body > .wrapper .l-sidebar {
   .u-pagenation--off .p-pagenation__nextposts {
     margin-left: 2rem;
   }
+}
+
+/*=======================
+  aタグアンダーラインあり
+  =======================*/
+.u-underLine {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */

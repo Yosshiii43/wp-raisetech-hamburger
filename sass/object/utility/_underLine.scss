@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/*=======================
+  aタグアンダーラインあり
+  =======================*/
+@use "../../foundation/forwords" as fw;
+
+.u-underLine{
+    text-decoration: underline;
+}

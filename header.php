@@ -56,20 +56,22 @@
             }
         }
         ?>
-        <?php if(wp_is_mobile()): ?>
-            <div class="p-header__foot" style="background-image:url(<?php echo esc_url($background_image_sp); ?>);">
-        <?php else: ?>
-            <div class="p-header__foot" style="background-image:url(<?php echo esc_url($background_image_pc); ?>);">
+        <?php if(!is_404()): ?>
+            <?php if(wp_is_mobile()): ?>
+                <div class="p-header__foot" style="background-image:url(<?php echo esc_url($background_image_sp); ?>);">
+            <?php else: ?>
+                <div class="p-header__foot" style="background-image:url(<?php echo esc_url($background_image_pc); ?>);">
+            <?php endif; ?>
+                <div class="p-pageTitle">             
+                    <?php if(is_front_page()): ?>
+                        <h1>ダミーサイト</h1>
+                    <?php elseif(is_archive()): ?>
+                        <h1 class="c-font-roboto">Menu:<span class="c-font-mplus"><?php single_cat_title(); ?></span></h1>
+                    <?php elseif(is_search()): ?>
+                        <h1 class="c-font-roboto">Search:<span class="c-font-mplus"><?php echo esc_html( get_search_query() ); ?></span></h1>
+                    <?php else: ?>
+                        <h1><?php the_title() ; ?></h1>
+                    <?php endif; ?>
+                </div>
         <?php endif; ?>
-            <div class="p-pageTitle">             
-                <?php if(is_front_page()): ?>
-                    <h1>ダミーサイト</h1>
-                <?php elseif(is_archive()): ?>
-                    <h1 class="c-font-roboto">Menu:<span class="c-font-mplus"><?php single_cat_title(); ?></span></h1>
-                <?php elseif(is_search()): ?>
-                    <h1 class="c-font-roboto">Search:<span class="c-font-mplus"><?php echo esc_html( get_search_query() ); ?></span></h1>
-                <?php else: ?>
-                    <h1><?php the_title() ; ?></h1>
-                <?php endif; ?>
-            </div>
     </header>

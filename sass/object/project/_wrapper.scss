@@ -26,7 +26,7 @@
 }
 
 //アーカイブページ用,サーチページ用
-.p-wrapper--archive,.p-wrapper--search{
+.p-wrapper--archive,.p-wrapper--search,.p-wrapper--404{
   background: fw.$color--paleBeige;
   padding: fw.sp-vw(32) fw.sp-vw(19) fw.sp-vw(32) fw.sp-vw(20);
   @include fw.mq("tab"){
