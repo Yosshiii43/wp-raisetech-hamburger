@@ -8,73 +8,71 @@
                             <h2 class="c-title">Take Out</h2>
                             <div class="c-horizon"></div>
                         </div>
-            <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); //プラグインの状態を取得
-            ?>
-            <?php if(is_plugin_active('advanced-custom-fields/acf.php')) : //wp-pagenaviプラグインが有効の場合
-                ?>
-                <?php
-                    // Take Outグループフィールドのデータを取得
-                    $takeOut_group = get_field('takeOut-group');
-                    if( $takeOut_group ): //Take Outグループに値がある時
-                    ?>
-                        <div class="p-salesFormat__content">
-                            <?php if( !empty($takeOut_group['takeOut1']) ): //Take Outアイテム1が空でない場合
-                                ?>
-                                <dl class="p-salesItem">
-                                    <dt class="p-salesItem__ttl c-title c-font-mplus">
-                                        <?php
-                                        $takeOut1_ttl = $takeOut_group['takeOut1']['takeOut1-ttl']; //Take Out1の見出しを変数に代入
-                                        echo !empty($takeOut1_ttl) ? esc_html($takeOut1_ttl) : '見出しが未入力です'; //Take Outアイテム1の見出しが空でなければその値を出力し、空の時は「見出しが未入力です」と出力
+                        <?php if (function_exists('get_field')): // ACFが有効な場合
+                        ?>
+                            <?php
+                            // Take Outグループフィールドのデータを取得
+                            $takeOut_group = get_field('takeOut-group');
+                            if( $takeOut_group ): //Take Outグループに値がある時
+                            ?>
+                                <div class="p-salesFormat__content">
+                                    <?php if( !empty($takeOut_group['takeOut1']) ): //Take Outアイテム1が空でない場合
                                         ?>
-                                    </dt>
-                                    <dd class="p-salesItem__txt c-text">
-                                        <?php
-                                        $takeOut1_txt = $takeOut_group['takeOut1']['takeOut1-txt']; //Take Out1のテキストを変数に代入
-                                        echo !empty($takeOut1_txt) ? esc_html($takeOut1_txt) : 'テキストが未入力です'; //Take Outアイテム1のテキストが空でなければその値を出力し、空の時は「テキストが未入力です」と出力
+                                        <dl class="p-salesItem">
+                                            <dt class="p-salesItem__ttl c-title c-font-mplus">
+                                                <?php
+                                                $takeOut1_ttl = $takeOut_group['takeOut1']['takeOut1-ttl']; //Take Out1の見出しを変数に代入
+                                                echo !empty($takeOut1_ttl) ? esc_html($takeOut1_ttl) : '見出しが未入力です'; //Take Outアイテム1の見出しが空でなければその値を出力し、空の時は「見出しが未入力です」と出力
+                                                ?>
+                                            </dt>
+                                            <dd class="p-salesItem__txt c-text">
+                                                <?php
+                                                $takeOut1_txt = $takeOut_group['takeOut1']['takeOut1-txt']; //Take Out1のテキストを変数に代入
+                                                echo !empty($takeOut1_txt) ? esc_html($takeOut1_txt) : 'テキストが未入力です'; //Take Outアイテム1のテキストが空でなければその値を出力し、空の時は「テキストが未入力です」と出力
+                                                ?>
+                                            </dd>
+                                        </dl>
+                                    <?php else: //Take Outアイテム1が空の場合
                                         ?>
-                                    </dd>
-                                </dl>
-                            <?php else: //Take Outアイテム1が空の場合
-                                ?>
+                                        <?php get_template_part('template-parts/salesItemTakeOut1','salesItemTakeOut1') ?>
+                                    <?php endif; ?>
+                                    <?php if( !empty($takeOut_group['takeOut2']) ): ?>
+                                        <dl class="p-salesItem">
+                                            <dt class="p-salesItem__ttl c-title c-font-mplus">
+                                                <?php
+                                                $takeOut2_ttl = $takeOut_group['takeOut2']['takeOut2-ttl']; //Take Out2の見出しを変数に代入
+                                                echo !empty($takeOut2_ttl) ? esc_html($takeOut2_ttl) : '見出しが未入力です';//Take Outアイテム2の見出しが空でなければその値を出力し、空の時は「見出しが未入力です」と出力
+                                                ?>
+                                            </dt>
+                                            <dd class="p-salesItem__txt c-text">
+                                                <?php
+                                                $takeOut2_txt = $takeOut_group['takeOut2']['takeOut2-txt'];//Take Out2のテキストを変数に代入
+                                                echo !empty($takeOut2_txt) ? esc_html($takeOut2_txt) : 'テキストが未入力です';//Take Outアイテム2のテキストが空でなければその値を出力し、空の時は「テキストが未入力です」と出力
+                                                ?>
+                                            </dd>
+                                        </dl>
+                                    <?php else: //Take Outアイテム2が空の場合
+                                        ?>
+                                        <?php get_template_part('template-parts/salesItemTakeOut2','salesItemTakeOut2') ?>
+                                    <?php endif; ?>
+                                </div>
+                            <?php else: //Take Outグループに値がない時
+                            ?>
+                                <div class="p-salesFormat__content">
+                                    <?php get_template_part('template-parts/salesItemTakeOut1','salesItemTakeOut1') ?>
+                                    <?php get_template_part('template-parts/salesItemTakeOut2','salesItemTakeOut2') ?>
+                                </div>
+                            <?php endif; //Take Outグループ終わり
+                            ?>
+                        <?php else: //ACFが無効または削除された場合
+                        ?>
+                            <div class="p-salesFormat__content">
                                 <?php get_template_part('template-parts/salesItemTakeOut1','salesItemTakeOut1') ?>
-                            <?php endif; ?>
-                            <?php if( !empty($takeOut_group['takeOut2']) ): ?>
-                                <dl class="p-salesItem">
-                                    <dt class="p-salesItem__ttl c-title c-font-mplus">
-                                        <?php
-                                        $takeOut2_ttl = $takeOut_group['takeOut2']['takeOut2-ttl']; //Take Out2の見出しを変数に代入
-                                        echo !empty($takeOut2_ttl) ? esc_html($takeOut2_ttl) : '見出しが未入力です';//Take Outアイテム2の見出しが空でなければその値を出力し、空の時は「見出しが未入力です」と出力
-                                        ?>
-                                    </dt>
-                                    <dd class="p-salesItem__txt c-text">
-                                        <?php
-                                        $takeOut2_txt = $takeOut_group['takeOut2']['takeOut2-txt'];//Take Out2のテキストを変数に代入
-                                        echo !empty($takeOut2_txt) ? esc_html($takeOut2_txt) : 'テキストが未入力です';//Take Outアイテム2のテキストが空でなければその値を出力し、空の時は「テキストが未入力です」と出力
-                                        ?>
-                                    </dd>
-                                </dl>
-                            <?php else: //Take Outアイテム2が空の場合
-                                ?>
                                 <?php get_template_part('template-parts/salesItemTakeOut2','salesItemTakeOut2') ?>
-                            <?php endif; ?>
-                        </div>
-                    <?php else: //Take Outグループに値がない時
-                    ?>
-                        <div class="p-salesFormat__content">
-                            <?php get_template_part('template-parts/salesItemTakeOut1','salesItemTakeOut1') ?>
-                            <?php get_template_part('template-parts/salesItemTakeOut2','salesItemTakeOut2') ?>
-                        </div>
-                    <?php endif; //Take Outグループ終わり
-                ?>
-                <?php else: //ACFが無効または削除された場合
-                ?>
-                    <div class="p-salesFormat__content">
-                        <?php get_template_part('template-parts/salesItemTakeOut1','salesItemTakeOut1') ?>
-                        <?php get_template_part('template-parts/salesItemTakeOut2','salesItemTakeOut2') ?>
-                    </div>
-                <?php endif; //ACF終わり
-                ?>
-                </a>
+                            </div>
+                        <?php endif; //ACF終わり
+                        ?>
+                    </a>
                 </article>
                 <article class="p-salesFormat">
                     <a href="<?php echo esc_url(home_url('/')); ?>category/eatin/">
@@ -82,7 +80,7 @@
                             <h2 class="c-title ">Eat In</h2>
                             <div class="c-horizon"></div>
                         </div>
-                        <?php if(is_plugin_active('advanced-custom-fields/acf.php')) : //wp-pagenaviプラグインが有効の場合
+                        <?php if (function_exists('get_field')): // ACFが有効な場合
                         ?>
                         <?php
                         // Eat Inグループフィールドのデータを取得

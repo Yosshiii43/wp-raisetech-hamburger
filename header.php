@@ -16,16 +16,7 @@
             <?php get_search_form(); ?>
         </div>
         <?php
-        // ページのタイトルを取得
-        if(is_front_page()){
-            $page_title = 'ダミーサイト';
-        }elseif(is_archive()){
-            $page_title = get_the_archive_title();
-        }elseif(is_search()){
-            $search_query =  get_search_query();
-        }else{
-            $page_title = get_the_title();
-        }
+
         //アイキャッチ画像の変数を空にする
         $default_thumbnail = ''; 
         $sp_thumbnail_id = '';
@@ -70,11 +61,15 @@
         <?php else: ?>
             <div class="p-header__foot" style="background-image:url(<?php echo esc_url($background_image_pc); ?>);">
         <?php endif; ?>
-            <div class="p-pageTitle">
-                <?php if(is_search()): ?>
-                    <h1>Search:<span><?php echo esc_html($search_query); ?></span></h1>
+            <div class="p-pageTitle">             
+                <?php if(is_front_page()): ?>
+                    <h1>ダミーサイト</h1>
+                <?php elseif(is_archive()): ?>
+                    <h1 class="c-font-roboto">Menu:<span class="c-font-mplus"><?php single_cat_title(); ?></span></h1>
+                <?php elseif(is_search()): ?>
+                    <h1 class="c-font-roboto">Search:<span class="c-font-mplus"><?php echo esc_html( get_search_query() ); ?></span></h1>
                 <?php else: ?>
-                    <h1><?php echo esc_html($page_title); ?></h1>
+                    <h1><?php the_title() ; ?></h1>
                 <?php endif; ?>
             </div>
     </header>
