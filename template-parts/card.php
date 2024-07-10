@@ -8,7 +8,10 @@
     </div>
     <div class="p-archiveCard__txt">
         <h3 class="c-title"><?php the_title(); ?></h3>
-        <h4><?php the_field('sub_title'); ?></h4>
+        <?php if (function_exists('get_field')): // ACFが有効な場合
+                ?>
+            <h4><?php the_field('sub_title'); ?></h4>
+        <?php endif; ?>
         <?php the_excerpt(); ?>
         <div class="p-archiveCard__txt__btn"><a href="<?php the_permalink(); ?>">詳しく見る</a></div>
     </div>
