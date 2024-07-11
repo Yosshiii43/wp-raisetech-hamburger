@@ -16,7 +16,9 @@ function custom_theme_support(){
         'footer_nav' => 'フッターメニュー',
          ));
      add_theme_support( 'editor-styles' );
-     add_editor_style(); 
+     add_theme_support( 'wp-block-styles' );
+     add_editor_style('editor-style.css');
+     
 }
 add_action('after_setup_theme', 'custom_theme_support');
 
@@ -52,3 +54,9 @@ function hanburger_archive_title($title) {
 //カテゴリーの説明でHTMLタグを使えるように許可する
 remove_filter( 'pre_term_description', 'wp_filter_kses' );
 add_filter( 'pre_term_description', 'wp_filter_post_kses' );
+
+//ブロックエディターに適用するCSSを登録
+function hamburger_add_block_editor_style() {
+    wp_enqueue_style( 'hamburger-block-editor-style', get_stylesheet_directory_uri() . '/css/editor-style.css', array( 'wp-edit-blocks' ), '1.0.0' );
+}
+add_action( 'enqueue_block_editor_assets', 'hamburger_add_block_editor_style' );
