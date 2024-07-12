@@ -1,6 +1,7 @@
 <?php get_header(); ?>
     <main class="l-main">
         <div class="p-wrapper--archive">
+            <section class="p-archiveDescription">
             <?php
                 if( is_category() && category_description() ) {
                 echo category_description();//カテゴリーの説明を取得する

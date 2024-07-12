@@ -226,8 +226,8 @@ ol{
     }
 }
 .previouspostslink,.nextpostslink{
+    display: flex;
     color: fw.$color--darkGray;
-    font-size: 2.4rem;
 }
 .previouspostslink::after{
     content: "前へ";

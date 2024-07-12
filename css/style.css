@@ -258,8 +258,8 @@ ul > li > ul {
   background: #3C2B1C;
 }
 .wp-pagenavi .previouspostslink, .wp-pagenavi .nextpostslink {
+  display: flex;
   color: #707070;
-  font-size: 2.4rem;
 }
 .wp-pagenavi .previouspostslink::after {
   content: "前へ";
