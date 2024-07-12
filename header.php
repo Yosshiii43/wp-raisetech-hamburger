@@ -56,7 +56,8 @@
             }
         }
         ?>
-        <?php if(!is_404()): ?>
+        <?php if(!is_404()): //404ページ以外の場合（404ページはメインビジュアルなし）
+            ?>
             <?php if(wp_is_mobile()): ?>
                 <div class="p-header__foot" style="background-image:url(<?php echo esc_url($background_image_sp); ?>);">
             <?php else: ?>

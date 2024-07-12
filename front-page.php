@@ -82,66 +82,66 @@
                         </div>
                         <?php if (function_exists('get_field')): // ACFが有効の場合
                         ?>
-                        <?php
-                        // Eat Inグループフィールドのデータを取得
-                        $eatIn_group = get_field('eatIn-group');
-                        if( $eatIn_group ): //Eat Inグループに値がある時
-                        ?>
-                            <div class="p-salesFormat__content">
-                                <?php if( !empty($eatIn_group['eatIn1']) ): //Eat Inアイテム1が空でない場合
-                                    ?>
-                                    <dl class="p-salesItem">
-                                        <dt class="p-salesItem__ttl c-title c-font-mplus">
-                                            <?php
-                                            $eatIn1_ttl = $eatIn_group['eatIn1']['eatIn1-ttl']; //Eat In1の見出しを変数に代入
-                                            echo !empty($eatIn1_ttl) ? esc_html($eatIn1_ttl) : '見出しが未入力です';//Eat Inアイテム1の見出しが空でなければその値を出力し、空の時は「見出しが未入力です」と出力
-                                            ?>
-                                        </dt>
-                                        <dd class="p-salesItem__txt c-text">
-                                            <?php
-                                            $eatIn1_txt = $eatIn_group['eatIn1']['eatIn1-txt']; //Eat In1のテキストを変数に代入
-                                            echo !empty($eatIn1_txt) ? esc_html($eatIn1_txt) : 'テキストが未入力です';//Eat Inアイテム1のテキストが空でなければその値を出力し、空の時は「テキストが未入力です」と出力
-                                            ?>
-                                        </dd>
-                                    </dl>
-                                <?php else: //Eat Inアイテム1が空の場合
-                                    ?>
-                                    <?php get_template_part('template-parts/salesItemEatIn1','salesItemEatIn1') ?>
-                                <?php endif; ?>
-                                <?php if( !empty($eatIn_group['eatIn2']) ): ?>
-                                    <dl class="p-salesItem">
-                                        <dt class="p-salesItem__ttl c-title c-font-mplus">
-                                            <?php
-                                            $eatIn2_ttl = $eatIn_group['eatIn2']['eatIn2-ttl']; //Eat In2の見出しを変数に代入
-                                            echo !empty($eatIn2_ttl) ? esc_html($eatIn2_ttl) : '見出しが未入力です';//Eat Inアイテム2の見出しが空でなければその値を出力し、空の時は「見出しが未入力です」と出力
-                                            ?>
-                                        </dt>
-                                        <dd class="p-salesItem__txt c-text">
-                                            <?php
-                                            $eatIn2_txt = $eatIn_group['eatIn2']['eatIn2-txt']; //Eat In2の見出しを変数に代入
-                                            echo !empty($eatIn2_txt) ? esc_html($eatIn2_txt) : 'テキストが未入力です';//Eat Inアイテム2の見出しが空でなければその値を出力し、空の時は「見出しが未入力です」と出力
-                                            ?>
-                                        </dd>
-                                    </dl>
-                                <?php else: //Eat Inアイテム2が空の場合
-                                    ?>
-                                    <?php get_template_part('template-parts/salesItemEatIn2','salesItemEatIn2') ?>
-                                <?php endif; ?>
-                            </div>
-                            <?php else: //Eat Inグループに値がない時
-                                ?>
-                                <div class="p-salesFormat__content">
-                                    <?php get_template_part('template-parts/salesItemEatIn1','salesItemEatIn1') ?>
-                                    <?php get_template_part('template-parts/salesItemEatIn2','salesItemEatIn2') ?>
-                                </div>
-                            <?php endif; //Eat Inグループ終わり
+                            <?php
+                            // Eat Inグループフィールドのデータを取得
+                            $eatIn_group = get_field('eatIn-group');
+                            if( $eatIn_group ): //Eat Inグループに値がある時
                             ?>
+                                <div class="p-salesFormat__content">
+                                    <?php if( !empty($eatIn_group['eatIn1']) ): //Eat Inアイテム1が空でない場合
+                                        ?>
+                                        <dl class="p-salesItem">
+                                            <dt class="p-salesItem__ttl c-title c-font-mplus">
+                                                <?php
+                                                $eatIn1_ttl = $eatIn_group['eatIn1']['eatIn1-ttl']; //Eat In1の見出しを変数に代入
+                                                echo !empty($eatIn1_ttl) ? esc_html($eatIn1_ttl) : '見出しが未入力です';//Eat Inアイテム1の見出しが空でなければその値を出力し、空の時は「見出しが未入力です」と出力
+                                                ?>
+                                            </dt>
+                                            <dd class="p-salesItem__txt c-text">
+                                                <?php
+                                                $eatIn1_txt = $eatIn_group['eatIn1']['eatIn1-txt']; //Eat In1のテキストを変数に代入
+                                                echo !empty($eatIn1_txt) ? esc_html($eatIn1_txt) : 'テキストが未入力です';//Eat Inアイテム1のテキストが空でなければその値を出力し、空の時は「テキストが未入力です」と出力
+                                                ?>
+                                            </dd>
+                                        </dl>
+                                    <?php else: //Eat Inアイテム1が空の場合
+                                        ?>
+                                        <?php get_template_part('template-parts/salesItemEatIn1','salesItemEatIn1') ?>
+                                    <?php endif; ?>
+                                    <?php if( !empty($eatIn_group['eatIn2']) ): ?>
+                                        <dl class="p-salesItem">
+                                            <dt class="p-salesItem__ttl c-title c-font-mplus">
+                                                <?php
+                                                $eatIn2_ttl = $eatIn_group['eatIn2']['eatIn2-ttl']; //Eat In2の見出しを変数に代入
+                                                echo !empty($eatIn2_ttl) ? esc_html($eatIn2_ttl) : '見出しが未入力です';//Eat Inアイテム2の見出しが空でなければその値を出力し、空の時は「見出しが未入力です」と出力
+                                                ?>
+                                            </dt>
+                                            <dd class="p-salesItem__txt c-text">
+                                                <?php
+                                                $eatIn2_txt = $eatIn_group['eatIn2']['eatIn2-txt']; //Eat In2の見出しを変数に代入
+                                                echo !empty($eatIn2_txt) ? esc_html($eatIn2_txt) : 'テキストが未入力です';//Eat Inアイテム2の見出しが空でなければその値を出力し、空の時は「見出しが未入力です」と出力
+                                                ?>
+                                            </dd>
+                                        </dl>
+                                    <?php else: //Eat Inアイテム2が空の場合
+                                        ?>
+                                        <?php get_template_part('template-parts/salesItemEatIn2','salesItemEatIn2') ?>
+                                    <?php endif; ?>
+                                </div>
+                                <?php else: //Eat Inグループに値がない時
+                                    ?>
+                                    <div class="p-salesFormat__content">
+                                        <?php get_template_part('template-parts/salesItemEatIn1','salesItemEatIn1') ?>
+                                        <?php get_template_part('template-parts/salesItemEatIn2','salesItemEatIn2') ?>
+                                    </div>
+                                <?php endif; //Eat Inグループ終わり
+                                ?>
                         <?php else: //ACFが無効または存在しない場合
                         ?>
-                        <div class="p-salesFormat__content">
-                            <?php get_template_part('template-parts/salesItemEatIn1','salesItemEatIn1') ?>
-                            <?php get_template_part('template-parts/salesItemEatIn2','salesItemEatIn2') ?>
-                        </div>
+                            <div class="p-salesFormat__content">
+                                <?php get_template_part('template-parts/salesItemEatIn1','salesItemEatIn1') ?>
+                                <?php get_template_part('template-parts/salesItemEatIn2','salesItemEatIn2') ?>
+                            </div>
                         <?php endif; //ACF終わり
                         ?>
                     </a>
@@ -162,15 +162,15 @@
                         $access_ttl = $access_group['access_ttl'];//$access_groupからアクセス見出しを取り出して変数に代入
                         $access_txt= $access_group['access_txt'];//$access_groupからアクセス本文を取り出して変数に代入
                     ?>
-                        <h2 class="p-access__caption__ttl c-title">
-                            <?php echo !empty($access_ttl) ? esc_html($access_ttl) : '見出しが未入力です'; //アクセス見出しに値があればそれを表示し、なければ「見出しが未入力です」と表示
-                            ?>
-                        </h2>
-                        <div class="p-access__caption__horizon c-horizon"></div>
-                        <p class="p-access__caption__txt c-lineHeightWide c-text-smal">
-                            <?php echo !empty($access_txt) ? esc_html($access_txt) : 'テキストが未入力です'; //アクセス本文に値があればそれを表示し、なければ「テキストが未入力です」と表示
-                            ?>
-                        </p>
+                    <h2 class="p-access__caption__ttl c-title">
+                        <?php echo !empty($access_ttl) ? esc_html($access_ttl) : '見出しが未入力です'; //アクセス見出しに値があればそれを表示し、なければ「見出しが未入力です」と表示
+                        ?>
+                    </h2>
+                    <div class="p-access__caption__horizon c-horizon"></div>
+                    <p class="p-access__caption__txt c-lineHeightWide c-text-smal">
+                        <?php echo !empty($access_txt) ? esc_html($access_txt) : 'テキストが未入力です'; //アクセス本文に値があればそれを表示し、なければ「テキストが未入力です」と表示
+                        ?>
+                    </p>
                     <?php else: //アクセスグループに値が無かった場合
                         ?>
                     <?php get_template_part('template-parts/access','access') ?>
