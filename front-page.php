@@ -80,7 +80,7 @@
                             <h2 class="c-title ">Eat In</h2>
                             <div class="c-horizon"></div>
                         </div>
-                        <?php if (function_exists('get_field')): // ACFが有効な場合
+                        <?php if (function_exists('get_field')): // ACFが有効の場合
                         ?>
                         <?php
                         // Eat Inグループフィールドのデータを取得
@@ -151,7 +151,7 @@
         <div class="p-access">
             <article class="p-access__caption">
                 <div>
-                <?php if (function_exists('get_field')): // ACFが有効な場合
+                <?php if (function_exists('get_field')): // ACFが有効の場合
                 ?>
                     <?php
                         $access_group = get_field('access_group');//アクセスグループの中身を配列として変数に代入

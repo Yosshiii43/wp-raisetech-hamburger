@@ -8,7 +8,7 @@
     </div>
     <div class="p-archiveCard__txt">
         <h3 class="c-title"><?php the_title(); ?></h3>
-        <?php if (function_exists('get_field')): // ACFが有効な場合
+        <?php if (function_exists('get_field')): // ACFが有効の場合
                 ?>
             <h4><?php the_field('sub_title'); ?></h4>
         <?php endif; ?>
