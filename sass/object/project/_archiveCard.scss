@@ -8,7 +8,6 @@
 .p-archiveCard{
     display: flex;
     flex-direction: column;
-    background: fw.$color--strongBrown;
     position: relative;
     overflow: hidden;
     @include fw.mq("tab"){
@@ -16,13 +15,19 @@
     }
     &__img,&__txt{
         width: 100%;
-        height: auto;
-
         @include fw.mq("tab"){
             flex-basis: 50%;
         }
     }
+    &__txt{
+        height: auto;
+        background: fw.$color--strongBrown;
+    }
     &__img{
+        height: fw.sp-vw( 230 );
+        @include fw.mq("tab"){
+            height: auto;
+        }
         img{
             position: static;
             width: 100%;

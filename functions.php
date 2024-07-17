@@ -8,17 +8,21 @@ function custom_theme_support(){
         'gallery',
         'caption',
     ));
-    add_theme_support('title-tag');
-    add_theme_support('post-thumbnails');
-    add_theme_support('menus');
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'automatic-feed-links' );
     register_nav_menus( array(
         'main_nav' => 'メインメニュー',
         'footer_nav' => 'フッターメニュー',
          ));
      //add_theme_support( 'editor-styles' );
-     //add_theme_support( 'wp-block-styles' );
+     //add_theme_support( 'wp-block-styles' );これをオンにすると引用とコードに余計なスタイルがついてしまうので設定しない
      //add_editor_style('editor-style.css');
-     
+     //add_theme_support( "custom-header");
+     add_theme_support( 'responsive-embeds' );
+     add_theme_support( 'custom-logo' );
+     add_theme_support( 'align-wide' );
+     add_theme_support( "custom-background" );
 }
 add_action('after_setup_theme', 'custom_theme_support');
 
@@ -60,3 +64,34 @@ add_filter( 'pre_term_description', 'wp_filter_post_kses' );
 //    wp_enqueue_style( 'hamburger-block-editor-style', get_stylesheet_directory_uri() . '/css/editor-style.css', array( 'wp-edit-blocks' ), '1.0.0' );
 //}
 //add_action( 'enqueue_block_editor_assets', 'hamburger_add_block_editor_style' );
+
+//ブロックスタイルの登録
+/*
+register_block_style(
+    'core/button',
+    array(
+        'name'  => 'button-border',
+        'label' => '1pxの囲み線',
+        'inline_style' => '.is-style-button-border{
+            border: 1px solid #707070;
+            border-radius: 20px;
+        }',
+    )
+);
+*/
+//ブロックパターンの登録
+if ( !function_exists( 'my_patterns_two_buttons' ) ) {
+    function my_patterns_two_buttons() {
+        register_block_pattern(
+            'my_pattern_1/filled_outlined_two_buttons',
+            array(
+                'title'       => __( 'Two buttons', 'hamburger' ),
+                'description' => _x( 'Two horizontal buttons, the left button is filled in, and the right button is outlined.', 'Block pattern description', 'hamburger' ),
+                'content'     => "<!-- wp:buttons {\"align\":\"center\"} -->\n<div class=\"wp-block-buttons aligncenter\"><!-- wp:button {\"backgroundColor\":\"very-dark-gray\",\"borderRadius\":0} -->\n<div class=\"wp-block-button\"><a class=\"wp-block-button__link has-background has-very-dark-gray-background-color no-border-radius\">" . esc_html__( 'Button One', 'hamburger' ) . "</a></div>\n<!-- /wp:button -->\n\n<!-- wp:button {\"textColor\":\"very-dark-gray\",\"borderRadius\":0,\"className\":\"is-style-outline\"} -->\n<div class=\"wp-block-button is-style-outline\"><a class=\"wp-block-button__link has-text-color has-very-dark-gray-color no-border-radius\">" . esc_html__( 'Button Two', 'hamburger' ) . "</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons -->",
+                'categories'  => array( 'buttons-pattern' ), 
+                )
+        );
+    }
+    add_action( 'init', 'my_patterns_two_buttons' );
+}
+

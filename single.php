@@ -7,6 +7,7 @@
             <h2 class="c-hedding--h2 u-marginBottom--25-55-57"><?php the_field('sub_title'); ?></h2>
         <?php endif; ?>
             <?php the_content(); ?>
+            <?php wp_link_pages(); ?>
         </div><!--p-wrapper-->
         <?php endwhile; else :?>
             <p>表示する記事がありません</p>

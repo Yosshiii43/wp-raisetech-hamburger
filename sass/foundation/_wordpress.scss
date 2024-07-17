@@ -41,6 +41,7 @@ h6.wp-block-heading{
     padding: 5.0rem;
     }
     p{
+        padding: 0;
         margin-bottom: 3.1rem;
         @include fw.mq("tab"){
             margin-bottom: 6.0rem;
@@ -165,12 +166,16 @@ ol{
 /*ボタン*/
 .wp-block-button{
     width: 100%;
+    @include fw.mq("tab") {
+        width: auto;
+    }
     a{
         border: 1px solid fw.$color--darkGray;
         background:  linear-gradient(to right, fw.$color--gradationBeige1, fw.$color--gradationBeige2);
         padding:3.0rem;
         width: 100%;
         border-radius: 20px;
+        width: auto;
         @include fw.mq("tab"){
             padding:4.0rem;
             width: 43rem;
@@ -244,3 +249,92 @@ ol{
     }
 }
 }
+
+//Theme Checkで定義が推奨されているもの 
+.wp-caption{
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%; /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+.wp-caption.alignnone {
+margin: 5px 20px 20px 0;
+}
+.wp-caption.alignleft {
+margin: 5px 20px 20px 0;
+}
+.wp-caption.alignright {
+margin: 5px 0 20px 20px;
+}
+.wp-caption img {
+border: 0 none;
+height: auto;
+margin: 0;
+max-width: 98.5%;
+padding: 0;
+width: auto;
+}
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+.sticky{
+    background: rgb(253, 252, 231);//先頭記事の固定を使用するときに値等見直す
+}
+.gallery-caption{
+    margin: auto;
+    text-align: center;
+    max-width: 100%;
+}
+.bypostauthor{
+    background: rgb(253, 252, 231);//Theme Checkのため現在適当な値を入れている
+}
+.alignright {
+float:right;
+margin: 5px 0 20px 20px;
+}
+.alignleft {
+float: left;
+margin: 5px 20px 20px 0;
+}
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+  }
+  
+  .screen-reader-text:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+  }

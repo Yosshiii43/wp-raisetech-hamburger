@@ -49,6 +49,7 @@ h6.wp-block-heading {
   }
 }
 .wp-block-quote p {
+  padding: 0;
   margin-bottom: 3.1rem;
 }
 @media screen and (min-width: 768px) {
@@ -188,12 +189,18 @@ ul > li > ul {
 .wp-block-button {
   width: 100%;
 }
+@media screen and (min-width: 768px) {
+  .wp-block-button {
+    width: auto;
+  }
+}
 .wp-block-button a {
   border: 1px solid #707070;
   background: linear-gradient(to right, #DED8D3, #F2EDE9);
   padding: 3rem;
   width: 100%;
   border-radius: 20px;
+  width: auto;
 }
 @media screen and (min-width: 768px) {
   .wp-block-button a {
@@ -278,6 +285,106 @@ ul > li > ul {
   .wp-pagenavi .nextpostslink::before {
     display: none;
   }
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%; /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+
+.sticky {
+  background: rgb(253, 252, 231);
+}
+
+.gallery-caption {
+  margin: auto;
+  text-align: center;
+  max-width: 100%;
+}
+
+.bypostauthor {
+  background: rgb(253, 252, 231);
+}
+
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  -webkit-clip-path: none;
+          clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
 }
 
 /*=======================
@@ -432,7 +539,7 @@ ul > li > ul {
   ベースCSS
   =======================*/
 html {
-  font-size: 62.5%; /*ベースを16pxから10pxに変更している*/
+  font-size: 62.5%; /*ベースを16pxから10pxに変更している　今度からこれはしない！*/
 }
 
 body {
@@ -1764,7 +1871,6 @@ body > .wrapper .l-sidebar {
 .p-archiveCard {
   display: flex;
   flex-direction: column;
-  background: #3C2B1C;
   position: relative;
   overflow: hidden;
 }
@@ -1775,11 +1881,22 @@ body > .wrapper .l-sidebar {
 }
 .p-archiveCard__img, .p-archiveCard__txt {
   width: 100%;
-  height: auto;
 }
 @media screen and (min-width: 768px) {
   .p-archiveCard__img, .p-archiveCard__txt {
     flex-basis: 50%;
+  }
+}
+.p-archiveCard__txt {
+  height: auto;
+  background: #3C2B1C;
+}
+.p-archiveCard__img {
+  height: 61.3333333333vw;
+}
+@media screen and (min-width: 768px) {
+  .p-archiveCard__img {
+    height: auto;
   }
 }
 .p-archiveCard__img img {
