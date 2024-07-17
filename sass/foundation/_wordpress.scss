@@ -210,9 +210,9 @@ ol{
         }
     }
 .page, .current{
-    display: none;
+    visibility: hidden;
     @include fw.mq("tab"){
-    display: inline-block;
+    visibility: visible;
     width: 35px;
     height: 35px;
     line-height: 35px;

@@ -243,11 +243,11 @@ ul > li > ul {
   }
 }
 .wp-pagenavi .page, .wp-pagenavi .current {
-  display: none;
+  visibility: hidden;
 }
 @media screen and (min-width: 768px) {
   .wp-pagenavi .page, .wp-pagenavi .current {
-    display: inline-block;
+    visibility: visible;
     width: 35px;
     height: 35px;
     line-height: 35px;
