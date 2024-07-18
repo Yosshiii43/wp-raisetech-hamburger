@@ -8,7 +8,7 @@
                             <h2 class="c-title">Take Out</h2>
                             <div class="c-horizon"></div>
                         </div>
-                        <?php if (function_exists('get_field')): // ACFが有効な場合
+                        <?php if( function_exists('get_field') ): // ACFが有効な場合
                         ?>
                             <?php
                             // Take Outグループフィールドのデータを取得

@@ -35,41 +35,41 @@
                 $sp_thumbnail = wp_get_attachment_image_url($sp_thumbnail_id, 'full');
             }
         }
-        if ($sp_thumbnail && $default_thumbnail) {
+        if( is_archive() || is_search()){ //アーカイブページと検索結果ページの時
+            $background_image_pc = get_theme_file_uri() . '/img/mainVisual--archive.jpg';
+            $background_image_sp = get_theme_file_uri() . '/img/mainVisual--archiveSp.jpg';
+        }elseif ($sp_thumbnail && $default_thumbnail) { //SP用アイキャッチとPC用アイキャッチがある時
             $background_image_pc = $default_thumbnail;
             $background_image_sp = $sp_thumbnail;
-        } elseif (!$sp_thumbnail && $default_thumbnail) {
+        } elseif (!$sp_thumbnail && $default_thumbnail) { //SP用アイキャッチが無くてPC用アイキャッチがある時
             $background_image_pc = $default_thumbnail;
             $background_image_sp = $default_thumbnail;
-        } elseif ($sp_thumbnail && !$default_thumbnail) {
+        } elseif ($sp_thumbnail && !$default_thumbnail) { //SP用アイキャッチがあってPC用アイキャッチがない時
             $background_image_pc = $sp_thumbnail;
             $background_image_sp = $sp_thumbnail;        
         } else {//アイキャッチ画像が管理画面から指定されていない時
-            if (is_page()) {
+            if ( is_page() ) {
                 $background_image_pc = get_theme_file_uri() . '/img/mainVisual--page.jpg';
                 $background_image_sp = get_theme_file_uri() . '/img/mainVisual--page.jpg';
-            } elseif (is_single()) {
+            } elseif ( is_single() ) {
                 $background_image_pc = get_theme_file_uri() . '/img/mainVisual--single.jpg';
                 $background_image_sp = get_theme_file_uri() . '/img/mainVisual--single.jpg';             
-            } else {
-                $background_image_pc = get_theme_file_uri() . '/img/mainVisual--archive.jpg';
-                $background_image_sp = get_theme_file_uri() . '/img/mainVisual--archiveSp.jpg';
-            }
+            } 
         }
         ?>
-        <?php if(!is_404()): //404ページ以外の場合（404ページはメインビジュアルなし）
+        <?php if( !is_404() ): //404ページ以外の場合（404ページはメインビジュアルなし）
             ?>
-            <?php if(wp_is_mobile()): ?>
+            <?php if( wp_is_mobile() ): ?>
                 <div class="p-header__foot" style="background-image:url(<?php echo esc_url($background_image_sp); ?>);">
             <?php else: ?>
                 <div class="p-header__foot" style="background-image:url(<?php echo esc_url($background_image_pc); ?>);">
             <?php endif; ?>
                 <div class="p-pageTitle">             
-                    <?php if(is_front_page()): ?>
+                    <?php if( is_front_page() ): ?>
                         <h1>ダミーサイト</h1>
-                    <?php elseif(is_archive()): ?>
+                    <?php elseif( is_archive() ): ?>
                         <h1 class="c-font-roboto">Menu:<span class="c-font-mplus"><?php single_cat_title(); ?></span></h1>
-                    <?php elseif(is_search()): ?>
+                    <?php elseif( is_search() ): ?>
                         <h1 class="c-font-roboto">Search:<span class="c-font-mplus"><?php echo esc_html( get_search_query() ); ?></span></h1>
                     <?php else: ?>
                         <h1><?php the_title() ; ?></h1>

@@ -1,6 +1,6 @@
 <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' );//プラグインの状態を取得
     ?>
-<?php if(is_plugin_active('wp-pagenavi/wp-pagenavi.php')) : //wp-pagenaviプラグインが有効の場合
+<?php if(is_plugin_active('wp-pagenavi/wp-pagenavi.php')): //wp-pagenaviプラグインが有効の場合
     ?>
 <?php wp_pagenavi(); ?>
 <?php else : //WP-PageNaviプラグインが有効になっていない場合 

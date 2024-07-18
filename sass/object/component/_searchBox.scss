@@ -5,7 +5,7 @@
   @use "../../foundation/forwords" as fw;
 
 .c-searchBox{
-  background-color: fw.$color--white;
+    background-color: fw.$color--white;
     position: relative;
     input.search-field, input.search-field:focus, input.search-field:focus-visible{
       border: 1px solid fw.$color--darkGray;
