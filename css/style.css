@@ -215,17 +215,17 @@ ul > li > ul {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 16.5333333333vw;
+  margin-top: 6.2rem;
 }
 @media screen and (min-width: 768px) {
   .wp-pagenavi {
     justify-content: center;
-    margin-top: 12.7697841727vw;
+    margin-top: 10.4rem;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
   .wp-pagenavi {
-    margin-top: 7.8125vw;
+    margin-top: 15rem;
   }
 }
 .wp-pagenavi > span, .wp-pagenavi > a {
@@ -755,9 +755,10 @@ body > .wrapper .l-sidebar {
   検索ボックス
   =======================*/
 .c-searchBox {
+  background-color: #FFFFFF;
   position: relative;
 }
-.c-searchBox input {
+.c-searchBox input.search-field, .c-searchBox input.search-field:focus, .c-searchBox input.search-field:focus-visible {
   border: 1px solid #707070;
   border-radius: 10px;
   background-color: #FFFFFF;
@@ -1121,17 +1122,20 @@ body > .wrapper .l-sidebar {
 }
 .p-header__search form div input {
   width: 57.6vw;
-  padding: 1.1rem 0.5rem 1.1rem 2.9rem;
+  height: 4.6rem;
+  padding: 1.1rem 0.5rem 1.1rem 3.4rem;
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   .p-header__search form div input {
     width: 47.4820143885vw;
-    padding: 1.1rem 1.2rem 1.1rem 3.6rem;
+    padding: 1.1rem 1.2rem 1.1rem 4.9rem;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
   .p-header__search form div input {
     width: 20.625vw;
+    padding: 0.7rem 1.2rem 0.6rem 6.1rem;
   }
 }
 .p-header__search form > input {
@@ -1351,27 +1355,6 @@ body > .wrapper .l-sidebar {
 /*=======================
   ページタイトル
   =======================*/
-.home .p-pageTitle {
-  color: #FFFFFF;
-  font-size: 3.6rem;
-  position: absolute;
-  top: calc(52.28% - 1.8rem);
-  left: 6.6666666667vw;
-}
-@media screen and (min-width: 768px) {
-  .home .p-pageTitle {
-    font-size: 4rem;
-    top: calc(50.88% - 1.8rem);
-    left: 10.3117505995vw;
-  }
-}
-@media screen and (min-width: 768px) and (min-width: 1024px) {
-  .home .p-pageTitle {
-    top: calc(49.72% - 2rem);
-    left: 4.4791666667vw;
-  }
-}
-
 .archive .p-pageTitle, .search .p-pageTitle {
   color: #FFFFFF;
   display: flex;
@@ -1432,6 +1415,27 @@ body > .wrapper .l-sidebar {
 @media screen and (min-width: 768px) and (min-width: 1024px) {
   .single .p-pageTitle, .page .p-pageTitle {
     top: calc(50% - 3rem);
+    left: 4.4791666667vw;
+  }
+}
+
+.home .p-pageTitle {
+  color: #FFFFFF;
+  font-size: 3.6rem;
+  position: absolute;
+  top: calc(52.28% - 1.8rem);
+  left: 6.6666666667vw;
+}
+@media screen and (min-width: 768px) {
+  .home .p-pageTitle {
+    top: calc(50.88% - 1.8rem);
+    left: 10.3117505995vw;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1024px) {
+  .home .p-pageTitle {
+    font-size: 4rem;
+    top: calc(49.72% - 2rem);
     left: 4.4791666667vw;
   }
 }
@@ -1916,16 +1920,16 @@ body > .wrapper .l-sidebar {
 }
 .p-archiveCard__txt {
   color: #FFFFFF;
-  padding: 8.5333333333vw 4.2666666667vw 11.7333333333vw;
+  padding: 3.2rem 1.6rem 4.4rem;
 }
 @media screen and (min-width: 768px) {
   .p-archiveCard__txt {
-    padding: 3.7170263789vw 4.1966426859vw 4.7961630695vw;
+    padding: 3.1rem 3.5rem 4rem;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1024px) {
   .p-archiveCard__txt {
-    padding: 2.9166666667vw 3.28125vw 3.125vw;
+    padding: 5.6rem 6.3rem 6rem;
   }
 }
 .p-archiveCard__txt h3 {
@@ -1969,6 +1973,7 @@ body > .wrapper .l-sidebar {
   background: #FFFFFF;
   padding: 1.1rem 4.2rem 1.4rem;
   border-radius: 13.1rem;
+  font-weight: 700;
 }
 @media screen and (min-width: 1024px) {
   .p-archiveCard__txt__btn a {

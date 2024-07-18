@@ -22,7 +22,7 @@
 @use "object/component/hedding";
 @use "object/component/font-mplus";
 @use "object/component/font-roboto";
-@use "object/component/seachBox";
+@use "object/component/searchBox";
 @use "object/component/button" as cb;
 @use "object/component/gnav";
 @use "object/component/horizon";
@@ -44,7 +44,7 @@
 
 //object__project
 @use "object/project/header__btn";
-@use "object/project/header__seach";
+@use "object/project/header__search";
 @use "object/project/header__ttl";
 @use "object/project/header" as ph;
 @use "object/project/sidebar" as ps;

@@ -4,22 +4,6 @@
   =======================*/
 @use "../../foundation/forwords" as fw;
 @use "sass:math";
-.home .p-pageTitle{ //フロントページ
-    color: fw.$color--white;
-    font-size: 3.6rem;
-    position: absolute;
-    top: calc( 52.28% - math.div(3.6rem,2));
-    left: fw.sp-vw( 25 );
-    @include fw.mq("tab"){
-        font-size: 4.0rem;
-        top: calc( 50.88% - math.div(3.6rem,2));
-        left: fw.tab-vw( 86 );
-        @include fw.mq("pc"){
-            top: calc( 49.72% - math.div(4.0rem,2));
-            left: fw.pc-vw( 86 );
-        }
-    }
-}
 
 
 .archive .p-pageTitle, .search .p-pageTitle{ //アーカイブ・アーカイブサーチ
@@ -69,6 +53,23 @@
         left: fw.tab-vw( 86 );
         @include fw.mq("pc"){
             top: calc( 50% - math.div(6.0rem,2));
+            left: fw.pc-vw( 86 );
+        }
+    }
+}
+
+.home .p-pageTitle{ //フロントページ
+    color: fw.$color--white;
+    font-size: 3.6rem;
+    position: absolute;
+    top: calc( 52.28% - math.div(3.6rem,2));
+    left: fw.sp-vw( 25 );
+    @include fw.mq("tab"){
+        top: calc( 50.88% - math.div(3.6rem,2));
+        left: fw.tab-vw( 86 );
+        @include fw.mq("pc"){
+            font-size: 4.0rem;
+            top: calc( 49.72% - math.div(4.0rem,2));
             left: fw.pc-vw( 86 );
         }
     }
