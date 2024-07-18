@@ -1,8 +1,8 @@
 <?php get_header(); ?>
     <main class="l-main">
-        <?php if(have_posts()):?>
+        <?php if( have_posts() ):?>
             <?php
-            while(have_posts()):
+            while( have_posts() ):
                 the_post();
                 ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class( 'p-wrapper' ); ?>>

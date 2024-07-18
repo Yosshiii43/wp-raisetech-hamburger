@@ -7,7 +7,7 @@
 .c-searchBox{
     background-color: fw.$color--white;
     position: relative;
-    input.search-field, input.search-field:focus, input.search-field:focus-visible{
+    &__input, &__input:focus{
       border: 1px solid fw.$color--darkGray;
       border-radius: 10px;
       background-color: fw.$color--white;
@@ -16,7 +16,7 @@
       position: absolute;
       top: calc(50% - 12px);//アイコンのt高さ24pxのため
       left:0.5rem;
-      @include fw.mq("tab"){
+      @include fw.mq( "tab" ){
         left: 1.2rem;
       }
     }

@@ -758,7 +758,7 @@ body > .wrapper .l-sidebar {
   background-color: #FFFFFF;
   position: relative;
 }
-.c-searchBox input.search-field, .c-searchBox input.search-field:focus, .c-searchBox input.search-field:focus-visible {
+.c-searchBox__input, .c-searchBox__input:focus {
   border: 1px solid #707070;
   border-radius: 10px;
   background-color: #FFFFFF;

@@ -7,7 +7,7 @@
         </section>
         <article class="p-archiveBody">
             <!--ループ-->
-            <?php if(have_posts()): while(have_posts()): the_post();?>
+            <?php if( have_posts() ): while( have_posts() ): the_post();?>
                 <?php get_template_part('template-parts/card','card'); ?>
             <?php endwhile; else : ?>
                 <p>表示する記事がありません</p>
