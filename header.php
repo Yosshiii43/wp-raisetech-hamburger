@@ -36,8 +36,8 @@
             }
         }
         if( is_archive() || is_search()){ //アーカイブページと検索結果ページの時
-            $background_image_pc = get_theme_file_uri() . '/img/mainVisual--archive.jpg';
-            $background_image_sp = get_theme_file_uri() . '/img/mainVisual--archiveSp.jpg';
+            $background_image_pc = get_theme_file_uri() . '/img/mainvisual--archive.jpg';
+            $background_image_sp = get_theme_file_uri() . '/img/mainvisual--archivesp.jpg';
         }elseif ($sp_thumbnail && $default_thumbnail) { //SP用アイキャッチとPC用アイキャッチがある時
             $background_image_pc = $default_thumbnail;
             $background_image_sp = $sp_thumbnail;
@@ -48,12 +48,15 @@
             $background_image_pc = $sp_thumbnail;
             $background_image_sp = $sp_thumbnail;        
         } else {//アイキャッチ画像が管理画面から指定されていない時
-            if ( is_page() ) {
-                $background_image_pc = get_theme_file_uri() . '/img/mainVisual--page.jpg';
-                $background_image_sp = get_theme_file_uri() . '/img/mainVisual--page.jpg';
+            if ( is_front_page() ) {
+                $background_image_pc = get_theme_file_uri() . '/img/mainvisual--frontpc.jpg';
+                $background_image_sp = get_theme_file_uri() . '/img/mainvisual--frontsp.jpg';
+            }elseif ( is_page() ) {
+                $background_image_pc = get_theme_file_uri() . '/img/mainvisual--page.jpg';
+                $background_image_sp = get_theme_file_uri() . '/img/mainvisual--page.jpg';
             } elseif ( is_single() ) {
-                $background_image_pc = get_theme_file_uri() . '/img/mainVisual--single.jpg';
-                $background_image_sp = get_theme_file_uri() . '/img/mainVisual--single.jpg';             
+                $background_image_pc = get_theme_file_uri() . '/img/mainvisual--single.jpg';
+                $background_image_sp = get_theme_file_uri() . '/img/mainvisual--single.jpg';             
             } 
         }
         ?>
