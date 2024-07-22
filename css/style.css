@@ -632,6 +632,7 @@ body > .wrapper {
   grid-template-columns: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   body > .wrapper {
@@ -1208,7 +1209,7 @@ body > .wrapper .l-sidebar {
 .p-sidebar .p-navbg, .p-sidebar .p-nav {
   height: 100vh;
   position: fixed;
-  overflow-y: visible;
+  overflow-y: auto;
 }
 .p-sidebar .p-navbg {
   transition: all 300ms 0ms ease-out;

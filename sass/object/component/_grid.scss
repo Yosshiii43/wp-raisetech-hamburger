@@ -8,16 +8,14 @@ body > .wrapper{
   display: grid;
   gap: 0;
   box-sizing: border-box;
-  //grid-template-rows: fw.sp-vw( 215 ) 1fr fw.sp-vw( 150 );
   grid-template-rows: auto 1fr 15rem;
   grid-template-columns: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  overflow: hidden;
   @include fw.mq("tab"){
-    //grid-template-rows: fw.tab-vw( 217 ) 1fr fw.tab-vw( 149 );
     grid-template-rows: auto 1fr 14.9rem;    
     @include fw.mq("pc"){
-      //grid-template-rows: fw.pc-vw( 217 ) 1fr fw.pc-vw( 150 );
       grid-template-rows: auto 1fr fw.pc-vw( 150 );
       grid-template-columns: 1fr 19.12%;
     }
