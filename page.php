@@ -7,8 +7,9 @@
                 ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class( 'p-wrapper' ); ?>>
             <?php $h2value = get_post_meta($post->ID,'sub_title',true); ?>
-            <?php if(!empty( $h2value )): ?>
-                <h2 class="c-hedding--h2 u-marginBottom--60"><?php the_field('sub_title'); ?></h2>
+            <?php if (function_exists('get_field')): // ACFが有効の場合
+                ?>
+            <h2 class="c-hedding--h2 u-marginBottom--25-55-57"><?php the_field('sub_title'); ?></h2>
             <?php endif; ?>
                 <?php the_content(); ?>
                 <?php wp_link_pages(); ?>

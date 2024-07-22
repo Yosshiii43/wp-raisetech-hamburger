@@ -14,7 +14,7 @@
   .p-navbg, .p-nav{
       height: 100vh;
       position: fixed;
-      overflow-y: auto;
+      overflow-y: visible;
       }
       .p-navbg{
         transition: all 300ms 0ms ease-out;
@@ -27,12 +27,14 @@
         transition: all 300ms 1ms ease-out;
         width: fw.sp-vw( 328 );
         padding-top: fw.sp-vw( 178 );
+        padding-bottom: fw.sp-vw( 178 );
         background-color: fw.$color--lightBeige;
         z-index: 200;
         left: 100%;
         @include fw.mq("tab"){
           width: fw.tab-vw( 367 );
           padding-top: fw.tab-vw( 178 );
+          padding-bottom: fw.tab-vw( 178 );
           @include fw.mq("pc"){
               width         : inherit;
               height        : inherit;
