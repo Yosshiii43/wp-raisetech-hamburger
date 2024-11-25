@@ -3,7 +3,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" contentt="<?php bloginfo('description'); ?>">
+    <meta name="description" content="<?php bloginfo('description'); ?>">
     <?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
     <?php wp_head(); ?>
 </head>
@@ -76,7 +76,8 @@
                         <h1 class="c-font-roboto">Search:<span class="c-font-mplus"><?php echo esc_html( get_search_query() ); ?></span></h1>
                     <?php else: ?>
                         <h1><?php the_title() ; ?></h1>
-                    <?php endif; ?>
+            <?php endif; ?>
+                </div>
                 </div>
         <?php endif; ?>
     </header>

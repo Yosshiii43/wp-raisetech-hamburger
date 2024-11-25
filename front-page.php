@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <main class="l-main">
         <div class="p-wrapper p-wrapper--front">
-            <article class="p-salesFormat__wrap">
+            <div class="p-salesFormat__wrap">
                 <article class="p-salesFormat">
                     <a href="<?php echo esc_url(home_url('/')); ?>category/takeout/">
                         <div class="p-salesFormat__ttl">
@@ -146,7 +146,7 @@
                         ?>
                     </a>
                 </article>
-            </article>
+            </div>
         </div>
         <div class="p-access">
             <article class="p-access__caption">
@@ -191,7 +191,7 @@
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-        </div><!--p-wrapper p-wrapper--front-->
+        </div><!-- p-wrapper p-wrapper-front -->
     </main>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
